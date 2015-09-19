@@ -142,6 +142,10 @@
                  'socks-open-network-stream
                'open-network-stream)
              (append (list name buffer host service) parameters)))))
+             (add-hook 'erc-mode-hook
+#'(lambda ()
+  (company-mode 0)
+  (set (make-local-variable 'scroll-conservatively) 100)))
 (add-hook 'erc-mode-hook
   #'(lambda ()
     (company-mode 0)
