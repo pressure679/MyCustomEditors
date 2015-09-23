@@ -1,11 +1,11 @@
 (require 'server)
 (unless (server-running-p)
-  (server-start)) 
+  (server-start))
 
-;; (autoload 'package "package" nil t)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")))
+(require 'package)
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-20150618.1949")
 (add-to-list 'load-path "~/.emacs.d/elpa/centered-cursor-mode-20150420.1242")
@@ -15,7 +15,7 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/erc-sasl")
 (add-to-list 'load-path "~/.emacs.d/elpa/erc-better-scroll")
 (add-to-list 'load-path "~/.emacs.d/elpa/evil-20150915.622")
-(add-to-list 'load-path "~/.emacs.d/elpa/evil-escape-20150921.614")
+(add-to-list 'load-path "~/.emacs.d/elpa/evil-escape-20150921.2058")
 (add-to-list 'load-path "~/.emacs.d/elpa/go-autocomplete-20150903.1940")
 (add-to-list 'load-path "~/.emacs.d/elpa/go-complete-20150917.139")
 (add-to-list 'load-path "~/.emacs.d/elpa/go-direx-20150315.1843")
@@ -109,8 +109,8 @@
 
 (global-set-key (kbd "M-.") 'goto-line)
 (global-set-key (kbd "C-'") 'hs-toggle-hiding)
-(global-set-key (kbd "C-<tab>") 'other-window)
-(global-set-key (kbd "C-S-<iso-lefttab>") 'next-buffer)
+(global-set-key (kbd "M-j") 'other-window)
+(global-set-key (kbd "M-k") 'next-buffer)
 
 (setq read-mail-command 'mew)
 (setq mail-user-agent 'mew-user-agent)
