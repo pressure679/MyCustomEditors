@@ -84,8 +84,10 @@
 (require 'yasnippet)
 (yas/global-mode 1)
 
-(autoload 'company-mode "company" nil t)
-(company-mode 1)
+(require 'go-mode)
+(require 'go-complete)
+(require 'go-autocomplete)
+(add-hook 'completion-at-point-functions 'go-complete-at-point)
 
 (require 'auto-complete-config)
 (ac-config-default)
@@ -100,9 +102,6 @@
 (require 'evil-escape)
 (global-set-key (kbd "M-q") 'evil-escape)
 
-(require 'go-autocomplete)
-(require 'go-complete)
-(add-hook 'completion-at-point-functions 'go-complete-at-point)
 ;; (require 'go-direx)
 ;; (require 'go-eldoc)
 ;; (add-hook 'go-mode-hook 'go-eldoc-setup)
@@ -111,6 +110,8 @@
 (global-set-key (kbd "C-'") 'hs-toggle-hiding)
 (global-set-key (kbd "M-j") 'other-window)
 (global-set-key (kbd "M-k") 'next-buffer)
+(global-set-key (kbd "M-q") 'evil-escape)
+(global-set-key (kbd "M-a") 'save-buffer)
 
 (setq read-mail-command 'mew)
 (setq mail-user-agent 'mew-user-agent)
