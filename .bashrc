@@ -114,10 +114,11 @@ if ! shopt -oq posix; then
 fi
 
 alias cls="clear screen"
+alias w3m="w3m -B"
 export GOROOT="/usr/share/go"
 export GOPATH="/home/naamik/go"
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-export wd="/home/naamik/Go/wikiproj"
+export wd="/home/naamik/go/wikiproj"
 export ALTERNATE_EDITOR=""
 export EDITOR=emacsclient
 
