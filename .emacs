@@ -14,6 +14,7 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/dash-20150829.433")
 (add-to-list 'load-path "~/.emacs.d/elpa/erc-sasl")
 (add-to-list 'load-path "~/.emacs.d/elpa/erc-better-scroll")
+(add-to-list 'load-path "~/.emacs.d/elpa/erc-colorize")
 (add-to-list 'load-path "~/.emacs.d/elpa/evil-20150915.622")
 (add-to-list 'load-path "~/.emacs.d/elpa/evil-escape-20150921.2058")
 (add-to-list 'load-path "~/.emacs.d/elpa/go-autocomplete-20150903.1940")
@@ -59,6 +60,11 @@
 (set-fringe-mode 0)
 (blink-cursor-mode 0)
 (show-paren-mode 1)
+
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
 (add-to-list 'default-frame-alist '(left . 0))
 (add-to-list 'default-frame-alist '(top . 0))
@@ -137,8 +143,8 @@
 (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
                                  "324" "329" "332" "333" "353" "477"))
 (setq erc-hide-list '("JOIN" "PART" "QUIT" "NICK"))
-(add-to-list 'erc-autojoin-channels-alist
-             '(".*freenode.net" "#emacs" "#vim" "##programming" "#lisp" "#python" "#java" "#go-nuts" "#algorithms" "#ai" "#wikimedia-ai" "##networking" "##security"))
+;; (add-to-list 'erc-autojoin-channels-alist
+;;              '(".*freenode.net" "#emacs" "#vim" "##programming" "#lisp" "#python" "#java" "#go-nuts" "#algorithms" "#ai" "#wikimedia-ai" "##networking" "##security"))
 (add-to-list 'erc-sasl-server-regexp-list
              ".*")
 (setq erc-sasl-server-regexp-list '("irc\\.freenode\\.net"))
