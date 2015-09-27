@@ -1,15 +1,18 @@
 filetype off
-set rtp +=~/.vim/Vundle.vim
+set rtp +=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'fatih/vim-go'
 Plugin 'nsf/gocode'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
-Plugin 'Shougo/echodoc.vim'
-Plugin 'garyburd/go-explorer'
+" optional extra snippets, ultisnips supports most languages though
+"Plugin 'honza/vim-snippets'
+" w3m is better for me than these to browse godoc, add if you want
+"Plugin 'garyburd/go-explorer'
+"Plugin 'Shougo/echodoc.vim'
 call vundle#end()
 
 let g:go_highlight_operators = 1
@@ -19,10 +22,12 @@ let g:go_highlight_structs = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_autosave = 0
 
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+
 let g:UltiSnipsExpandTrigger="<C-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-l>"
-let g:UltiSnipsJumpBackwardTrigger="<c-j>"
-let g:echodoc_enable_at_startup = 1
+let g:UltiSnipsJumpForwardTrigger="<C-l>"
+let g:UltiSnipsJumpBackwardTrigger="<C-j>"
 
 set completeopt-=preview
 set cmdheight=2
@@ -41,6 +46,7 @@ set smartcase
 set softtabstop=2
 set wildmenu
 set wildmode=list:longest,full
+set scrolloff=5
 
 set backupdir=~/.vim/backup/
 set directory=~/.vim/swap/
@@ -53,7 +59,7 @@ se t_Co=256
 "colorscheme distinguished
 "colorscheme vividchalk
 "colorscheme matrix
-"colorscheme monokai
+"colorscheme molokai
 colorscheme gruvbox
 "colorscheme solarized
 
@@ -77,6 +83,7 @@ hi Special ctermbg=none
 hi Special cterm=none
 hi Cursor ctermbg=none
 hi Cursor cterm=none
+hi Cursor ctermfg=none
 hi Search ctermbg=none
 hi Search cterm=none
 hi MatchParen ctermbg=none
@@ -84,7 +91,8 @@ hi Pmenu ctermfg=Green
 hi Pmenu ctermbg=none
 hi Pmenu cterm=none
 hi Visual cterm=none
-hi Function ctermfg=55
+hi Function ctermfg=none
+hi MatchParen ctermfg=DarkGreen
 
 inoremap <F4> <Esc>
 nmap <F3> :w! <CR>
@@ -98,4 +106,4 @@ nmap <m-a><m-a> :wq! <CR>
 set <m-q>=q
 inoremap <m-q> <Esc>
 nmap <m-q><m-q> :q! <CR>
-
+filetype plugin on
