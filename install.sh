@@ -3,7 +3,7 @@ cd /etc/apt
 sudo wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/sources.list
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install vim emacs24 git mercurial irssi build-essential make cmake automake w3m libpcap0.8-dev python-dev linux-firmware gccgo
+sudo apt-get install vim emacs24 git mercurial irssi build-essential make cmake automake w3m python-dev linux-firmware gccgo
 cd $HOME
 mkdir $HOME/.vim
 chmod $USER $HOME/.vim
