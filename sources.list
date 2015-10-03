@@ -1,4 +1,4 @@
-# deb cdrom:[Ubuntu-GNOME 14.04.3 LTS _Trusty Tahr_ - Beta amd64 (20150805)]/ trusty main multiverse restricted universe
+# deb cdrom:[Xubuntu 14.04.3 LTS _Trusty Tahr_ - Beta amd64 (20150805)]/ trusty main multiverse restricted universe
 
 # See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
 # newer versions of the distribution.
@@ -55,8 +55,16 @@ deb-src http://security.ubuntu.com/ubuntu trusty-security multiverse
 deb http://extras.ubuntu.com/ubuntu trusty main
 deb-src http://extras.ubuntu.com/ubuntu trusty main
 
+### THIS FILE IS AUTOMATICALLY CONFIGURED BY ME###
+# You may comment out this entry, but any other modifications may be lost.
+deb http://dl.google.com/linux/chrome/deb/ stable main
+### THIS FILE IS AUTOMATICALLY CONFIGURED ###
+# You may comment out this entry, but any other modifications may be lost.
+deb http://dl.google.com/linux/chrome/deb/ stable main
 deb http://ppa.launchpad.net/hanipouspilot/rtlwifi/ubuntu trusty main
 # deb-src http://ppa.launchpad.net/hanipouspilot/rtlwifi/ubuntu trusty main
-
+deb http://ppa.launchpad.net/hanipouspilot/rtlwifi/ubuntu trusty main
+# deb-src http://ppa.launchpad.net/hanipouspilot/rtlwifi/ubuntu trusty main
+deb http://ppa.launchpad.net/kilian/f.lux/ubuntu trusty main
+# deb-src http://ppa.launchpad.net/kilian/f.lux/ubuntu trusty main
 deb http://ppa.launchpad.net/linrunner/tlp/ubuntu trusty main
-# deb-src http://ppa.launchpad.net/linrunner/tlp/ubuntu trusty main
