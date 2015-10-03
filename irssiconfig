@@ -184,5 +184,6 @@ ignores = (
   { level = "JOINS PARTS QUITS"; channels = ( "##security" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#ubuntu" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#vim" ); },
-  { level = "JOINS PARTS QUITS"; channels = ( "#emacs" ); }
+  { level = "JOINS PARTS QUITS"; channels = ( "#emacs" ); },
+  { mask = "all"; level = "JOINS PARTS QUITS"; }
 );
