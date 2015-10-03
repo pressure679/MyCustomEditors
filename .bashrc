@@ -115,10 +115,10 @@ fi
 
 alias cls="clear screen"
 alias w3m="w3m -B"
-export GOROOT="/usr/share/go"
-export GOPATH="/home/naamik/go"
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-export wd="/home/naamik/go/wikiproj"
+export GOROOT="$HOME/go"
+export GOPATH=$GOROOT
+export PATH=$PATH:$GOROOT/bin
+export wd="$GOROOT/go/wikiproj"
 export ALTERNATE_EDITOR=""
 export EDITOR=emacsclient
 
