@@ -30,3 +30,5 @@ git clone https://github.com/Valloric/YouCompleteMe
 git clone https://github.com/majutsushi/tagbar
 git clone https://github.com/SirVer/ultisnips
 git clone https://github.com/garyburd/go-explorer
+
+echo "sofar so good, now do :PluginInstall in vim and :GoInstallBinaries, after that run install-vim-go2.sh"
