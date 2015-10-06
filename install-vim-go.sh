@@ -1,3 +1,4 @@
+# after running this file do :PluginInstall in vim and :GoInstallBinaries, after that  install-vim-go2.sh
 echo "filetype off
 set rtp +=~/.vim/bundle/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
@@ -18,7 +19,7 @@ let g:go_fmt_autosave = 0
 let g:UltiSnipsExpandTrigger=\"<C-k>\"
 let g:UltiSnipsJumpForwardTrigger=\"<C-l>\"
 let g:UltiSnipsJumpBackwardTrigger=\"<C-j>\"
-filetype plugin on"
+filetype plugin on" >> .vimrc
 
 cd .vim
 mkdir bundle
@@ -29,4 +30,3 @@ git clone https://github.com/Valloric/YouCompleteMe
 git clone https://github.com/majutsushi/tagbar
 git clone https://github.com/SirVer/ultisnips
 git clone https://github.com/garyburd/go-explorer
-nimak$ 
