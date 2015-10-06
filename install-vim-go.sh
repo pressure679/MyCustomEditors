@@ -1,4 +1,5 @@
 # after running this file do :PluginInstall in vim and :GoInstallBinaries, after that  install-vim-go2.sh
+cd $HOME
 echo "filetype off
 set rtp +=~/.vim/bundle/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
