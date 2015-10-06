@@ -10,5 +10,5 @@ mv golint $GOROOT/bin
 mv gorename $GOROOT/bin
 mv oracle $GOROOT/bin
 cd $HOME/.vim/bundle/YouCompleteMe
-sudo apt-get install python-dev cmake build-essential
+sudo apt-get install python-dev cmake build-essential ctags
 python install.py --gocode-completer
