@@ -3,16 +3,15 @@ set rtp +=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
+"Plugin 'fatih/vim-go'
+"Plugin 'nsf/gocode'
+Plugin 'fsouza/go.vim'
+"Plugin 'Blackrush/vim-gocode'
+Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'fatih/vim-go'
-Plugin 'nsf/gocode'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
-" optional extra snippets, ultisnips supports most languages though
-"Plugin 'honza/vim-snippets'
-" w3m is better for me than these to browse godoc, add if you want
-"Plugin 'garyburd/go-explorer'
-"Plugin 'Shougo/echodoc.vim'
+Plugin 'honza/vim-snippets'
 call vundle#end()
 
 let g:go_highlight_operators = 1
@@ -22,31 +21,40 @@ let g:go_highlight_structs = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_autosave = 0
 
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-
 let g:UltiSnipsExpandTrigger="<C-k>"
 let g:UltiSnipsJumpForwardTrigger="<C-l>"
 let g:UltiSnipsJumpBackwardTrigger="<C-j>"
 
-set completeopt-=preview
-set cmdheight=2
-set autoindent
+let g:tagbar_type_go = {
+  \ 'ctagstype': 'go',
+  \ 'kinds' : [
+    \'p:package',
+  \'f:function',
+  \'v:variables',
+  \'t:type',
+  \'c:const'
+  \]
+\}
+
+set tabstop=2
 set expandtab
+set shiftwidth=2
+set autoindent
+set smartindent
+set smarttab
+set softtabstop=2
+set cmdheight=2
 set guicursor+=a:blinkon0
 set hlsearch
+set completeopt-=preview
 set ignorecase
 set incsearch
 set number
-set shiftwidth=2
-"set showcmd"
 set showmatch
-set smarttab
 set smartcase
-set softtabstop=2
 set wildmenu
 set wildmode=list:longest,full
-set scrolloff=5
+set scrolloff=10
 
 set backupdir=~/.vim/backup/
 set directory=~/.vim/swap/
@@ -97,6 +105,7 @@ hi MatchParen ctermfg=DarkGreen
 inoremap <F4> <Esc>
 nmap <F3> :w! <CR>
 nmap <F2> :wq! <CR>
+nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> va}zf <CR>
 nmap <F10> zo <CR>
