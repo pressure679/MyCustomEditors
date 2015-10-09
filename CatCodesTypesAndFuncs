@@ -1,0 +1,8 @@
+echo package
+cat sample.go | egrep "package" --color
+echo 
+echo Types
+cat sample.go | egrep "type" --color
+echo 
+echo Functions
+cat sample.go | egrep "func" --color
