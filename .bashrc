@@ -119,8 +119,7 @@ export GOROOT="$HOME/go"
 export GOPATH=$GOROOT
 export PATH=$PATH:$GOROOT/bin
 export wd="$GOROOT/go/wikiproj"
-export ALTERNATE_EDITOR=""
-export EDITOR=emacsclient
+alias ec="emacsclient -t"
 
 # If on console, change cursor colour according to
 # /usr/src/linux/Documentation/VGA-softcursor.txt
