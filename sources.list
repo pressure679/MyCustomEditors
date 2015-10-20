@@ -55,16 +55,22 @@ deb-src http://security.ubuntu.com/ubuntu trusty-security multiverse
 deb http://extras.ubuntu.com/ubuntu trusty main
 deb-src http://extras.ubuntu.com/ubuntu trusty main
 
-### THIS FILE IS AUTOMATICALLY CONFIGURED BY ME###
+# deb http://dk.archive.ubuntu.com/ubuntu/ vivid main universe multiverse restricted
+# deb-src http://dk.archive.ubuntu.com/ubuntu/ vivid main universe multiverse restricted
+
+### THIS FILE IS NON-AUTOMATICALLY CONFIGURED BY ME###
 # You may comment out this entry, but any other modifications may be lost.
+deb-src http://dl.google.com/linux/chrome/deb/ stable main
 deb http://dl.google.com/linux/chrome/deb/ stable main
-### THIS FILE IS AUTOMATICALLY CONFIGURED ###
-# You may comment out this entry, but any other modifications may be lost.
-deb http://dl.google.com/linux/chrome/deb/ stable main
+
+deb-src http://ppa.launchpad.net/hanipouspilot/rtlwifi/ubuntu trusty main
 deb http://ppa.launchpad.net/hanipouspilot/rtlwifi/ubuntu trusty main
-# deb-src http://ppa.launchpad.net/hanipouspilot/rtlwifi/ubuntu trusty main
-deb http://ppa.launchpad.net/hanipouspilot/rtlwifi/ubuntu trusty main
-# deb-src http://ppa.launchpad.net/hanipouspilot/rtlwifi/ubuntu trusty main
+
+deb-src http://ppa.launchpad.net/kilian/f.lux/ubuntu trusty main
 deb http://ppa.launchpad.net/kilian/f.lux/ubuntu trusty main
-# deb-src http://ppa.launchpad.net/kilian/f.lux/ubuntu trusty main
+
+deb-src http://ppa.launchpad.net/linrunner/tlp/ubuntu trusty main
 deb http://ppa.launchpad.net/linrunner/tlp/ubuntu trusty main
+
+deb-src http://apt.mopidy.com/ jessie main contrib non-free
+deb http://apt.mopidy.com/ jessie main contrib non-free
