@@ -74,3 +74,6 @@ deb http://ppa.launchpad.net/linrunner/tlp/ubuntu trusty main
 
 deb-src http://apt.mopidy.com/ jessie main contrib non-free
 deb http://apt.mopidy.com/ jessie main contrib non-free
+
+deb-src http://repository.spotify.com stable non-free
+deb http://repository.spotify.com stable non-free
