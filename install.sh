@@ -9,8 +9,8 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 2042F03C5FABD0BA2C
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A31B1FE775FD7643D79B75107036069A2F22E44A
 # fingerprint key for Google Chrome Browser
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4CCA1EAF950CEE4AB83976DCA040830F7FAC5991
-# fingerprint key for mopidy apt
-wget -q -O - https://apt.mopidy.com/mopidy.gpg | sudo apt-key add -
+# fingerprint key for Spotify
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install vim emacs24 git mercurial irssi build-essential make cmake automake w3m python-dev linux-firmware gccgo-4.9 ctags thinkfan tor tlp thinkfan google-chrome-stable indicator-cpufreq cpufrequtils lm-sensors vlc audacious picard mopidy psensors gocode
