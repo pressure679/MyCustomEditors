@@ -3,13 +3,10 @@ set rtp +=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
-"Plugin 'fatih/vim-go'
-"Plugin 'nsf/gocode'
 Plugin 'fsouza/go.vim'
-"Plugin 'Blackrush/vim-gocode'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 call vundle#end()
@@ -101,6 +98,7 @@ hi Pmenu cterm=none
 hi Visual cterm=none
 hi Function ctermfg=none
 hi MatchParen ctermfg=DarkGreen
+hi VertSplit ctermbg=none
 
 inoremap <F4> <Esc>
 nmap <F3> :w! <CR>
