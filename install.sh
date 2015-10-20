@@ -1,6 +1,16 @@
 sudo rm /etc/apt/sources.list
 cd /etc/apt
 sudo wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/sources.list
+# fingerprint key for f.lux indicator applet from https://launchpad.net/~kilian/+archive/ubuntu/f.lux
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E602B5DDEA4951FB628E7BD4FAEB83059BD4ED25
+# fingerprint key for tlp power management software from https://launchpad.net/~linrunner/+archive/ubuntu/tlp
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 2042F03C5FABD0BA2CED40412B3F92F902D65EFF
+# fingerprint key for fixed rtl8723be driver from https://launchpad.net/~hanipouspilot/+archive/ubuntu/rtlwifi
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A31B1FE775FD7643D79B75107036069A2F22E44A
+# fingerprint key for Google Chrome Browser
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4CCA1EAF950CEE4AB83976DCA040830F7FAC5991
+# fingerprint key for mopidy apt
+wget -q -O - https://apt.mopidy.com/mopidy.gpg | sudo apt-key add -
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install vim emacs24 git mercurial irssi build-essential make cmake automake w3m python-dev linux-firmware gccgo-4.9 ctags thinkfan tor tlp thinkfan google-chrome-stable indicator-cpufreq cpufrequtils lm-sensors vlc audacious picard mopidy psensors gocode
