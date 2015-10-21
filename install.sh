@@ -13,7 +13,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4CCA1EAF950CEE4AB8
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install vim emacs24 git mercurial irssi build-essential make cmake automake w3m python-dev linux-firmware gccgo-4.9 ctags thinkfan tor tlp thinkfan google-chrome-stable indicator-cpufreq cpufrequtils lm-sensors vlc audacious picard mopidy psensors gocode spotify-client
+sudo apt-get install vim emacs24 git mercurial irssi build-essential make cmake automake w3m python-dev linux-firmware gccgo-4.9 ctags thinkfan tor tlp thinkfan google-chrome-stable indicator-cpufreq cpufrequtils lm-sensors vlc audacious picard mopidy psensors gocode spotify-client gparted gnome-disk-utility
 cd $HOME
 mkdir $HOME/.vim
 chmod $USER $HOME/.vim
