@@ -115,10 +115,10 @@ fi
 
 alias cls="clear screen"
 alias w3m="w3m -B"
-export GOROOT="$HOME/go"
-export GOPATH=$GOROOT
-export PATH=$PATH:$GOROOT/bin
-export wd="$GOROOT/go/wikiproj"
+export GOROOT="/usr/share/go"
+export GOPATH="$HOME/go"
+export PATH=$PATH
+export wd="$HOME/go/wikiproj"
 alias ec="emacsclient -t"
 
 # If on console, change cursor colour according to
