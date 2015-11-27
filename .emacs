@@ -7,11 +7,11 @@
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
-(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-20150618.1949")
+(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-201501112.2030")
 (add-to-list 'load-path "~/.emacs.d/elpa/centered-cursor-mode-20151001.634")
 (add-to-list 'load-path "~/.emacs.d/elpa/erc-better-scroll")
 (add-to-list 'load-path "~/.emacs.d/elpa/erc-hl-nicks-20140619.522")
-(add-to-list 'load-path "~/.emacs.d/elpa/evil-20151012.728")
+(add-to-list 'load-path "~/.emacs.d/elpa/evil-20151109.829")
 (add-to-list 'load-path "~/.emacs.d/elpa/evil-escape-20150926.2152")
 (add-to-list 'load-path "~/.emacs.d/elpa/go-autocomplete-20150903.1940")
 (add-to-list 'load-path "~/.emacs.d/elpa/go-mode-20150817.2318")
@@ -19,11 +19,12 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/goto-chg-20131228.659")
 (add-to-list 'load-path "~/.emacs.d/elpa/popup-20150626.711")
 (add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-20140509.522")
-(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-20151011.1823")
+(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-20151108.1505")
+(add-to-list 'load-path "~/.emacs.d/elpa/w3m-20151013.327")
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/cyberpunk-theme-20150828.508")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/gruvbox-theme-20150729.341")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/monokai-theme-20151014.304")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/monokai-theme-20151022.703")
 
 (load-theme 'gruvbox t)
 ;; cyberpunk
@@ -42,7 +43,7 @@
 (show-paren-mode 1)
 (electric-indent-mode 1)
 (visual-line-mode 1)
-(glasses-mode 1)
+;; (glasses-mode 1)
 
 (global-set-key (kbd "M-.") 'goto-line)
 (global-set-key (kbd "C-h") 'hs-toggle-hiding)
@@ -71,14 +72,14 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-(require 'go-mode)
-(require 'go-autocomplete)
-
 (require 'auto-complete-config)
 (ac-config-default)
 (auto-complete-mode 1)
 (define-key ac-complete-mode-map "\C-n" 'ac-next)
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
+
+(require 'go-mode)
+(require 'go-autocomplete)
 
 (require 'centered-cursor-mode)
 (global-set-key (kbd "M-,") 'centered-cursor-mode)
@@ -110,23 +111,30 @@
  '(erc-system-name "pressure679")
  '(erc-user-full-name "pressure679")
  '(inhibit-startup-screen t)
- '(linum-format "%d| "))
+ '(linum-format "%d "))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ac-candidate-face ((t (:foreground "gray"))))
+ '(ac-gtags-candidate-face ((t (:foreground "navy"))))
+ '(ac-gtags-selection-face ((t (:foreground "white"))))
+ '(ac-selection-face ((t (:foreground "white"))))
  '(fringe ((t (:background "color-235"))))
  '(menu ((t nil)))
  '(mode-line ((t (:background "color-243" :foreground "color-235" :box nil))))
  '(mode-line-inactive ((t (:background "color-239" :foreground "color-246" :box nil))))
  '(popup-face ((t (:foreground "black"))))
+ '(popup-menu-mouse-face ((t (:foreground "white"))))
+ '(popup-menu-selection-face ((t (:foreground "white"))))
+ '(popup-scroll-bar-background-face ((t nil)))
  '(show-paren-match ((t (:foreground "green"))))
  '(speedbar-separator-face ((t (:foreground "white" :overline "gray"))) t)
  '(tool-bar ((t (:foreground "black"))))
- '(w3m-header-line-location-content ((t (:foreground "DarkGoldenrod"))))
- '(w3m-header-line-location-title ((t (:foreground "Blue"))))
- '(w3m-history-current-url ((t (:foreground "navy"))))
- '(w3m-tab-background ((t (:foreground "black"))))
- '(w3m-tab-selected ((t (:foreground "navy"))))
- '(w3m-tab-unselected ((t (:foreground "darkgreen")))))
+ '(w3m-header-line-location-content ((t (:foreground "DarkGoldenrod"))) t)
+ '(w3m-header-line-location-title ((t (:foreground "Blue"))) t)
+ '(w3m-history-current-url ((t (:foreground "navy"))) t)
+ '(w3m-tab-background ((t (:foreground "black"))) t)
+ '(w3m-tab-selected ((t (:foreground "navy"))) t)
+ '(w3m-tab-unselected ((t (:foreground "darkgreen"))) t))
