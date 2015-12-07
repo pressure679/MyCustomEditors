@@ -13,17 +13,10 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4CCA1EAF950CEE4AB8
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install vim emacs24 git mercurial irssi build-essential make cmake automake w3m python-dev linux-firmware gccgo-4.9 ctags thinkfan tor tlp thinkfan google-chrome-stable indicator-cpufreq cpufrequtils lm-sensors vlc audacious picard mopidy psensors gocode spotify-client gparted gnome-disk-utility
-cd $HOME
-mkdir $HOME/.vim
-chmod $USER $HOME/.vim
-mkdir $HOME/.vim/bundle
-cd /home/$USER/.vim
-git clone https://github.com/VundleVim/Vundle.vim
+sudo apt-get install vim emacs git mercurial irssi build-essential make cmake automake w3m python-dev linux-firmware gccgo-4.9 ctags thinkfan tor tlp thinkfan google-chrome-stable indicator-cpufreq cpufrequtils lm-sensors vlc audacious picard mopidy psensors gocode spotify-client gparted gnome-disk-utility
 mkdir $HOME/.emacs.d | chmod $USER $HOME/.emacs.d
 cd $HOME
 wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/.emacs
-wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/.vimrc
 mkdir $HOME/.irssi
 cd $HOME/.irssi
 wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/irssiconfig
@@ -38,4 +31,3 @@ echo } >> default.theme
 mkdir $HOME/go
 mkdir $HOME/go/wikiproj
 cd $HOME/go/wikiproj
-wget https://raw.githubusercontent.com/pressure679/WikiPagerankDB/master/sample.go
