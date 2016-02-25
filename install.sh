@@ -14,7 +14,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install emacs git mercurial irssi build-essential make cmake automake w3m python-dev linux-firmware gccgo-4.9 ctags tor tlp google-chrome-stable indicator-cpufreq cpufrequtils lm-sensors vlc audacious picard psensors gocode spotify-client htop openssh fluxgui
+sudo apt-get install emacs git mercurial irssi build-essential make cmake automake w3m python-dev linux-firmware gccgo-4.9 ctags tor tlp google-chrome-stable indicator-cpufreq cpufrequtils lm-sensors vlc audacious picard psensors gocode spotify-client htop openssh-server fluxgui
 
 mkdir $HOME/.emacs.d | chmod $USER $HOME/.emacs.d
 cd $HOME
