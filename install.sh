@@ -27,7 +27,6 @@ mv irssiconfig config
 mkdir scripts/autorun
 cd scripts/autorun
 wget https://raw.githubusercontent.com/irssi/scripts.irssi.org/gh-pages/scripts/nickcolor.pl
-mk default.theme
 echo "abstracts = {" >> default.theme
 echo "  sb_background = \"%n\";" >> default.theme
 echo } >> default.theme
