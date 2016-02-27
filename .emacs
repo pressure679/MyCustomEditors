@@ -2,6 +2,7 @@
 (unless (server-running-p)
   (server-start))
 
+
 (require 'package)
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
@@ -10,23 +11,23 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-201501112.2030")
 (add-to-list 'load-path "~/.emacs.d/elpa/centered-cursor-mode-20151001.634")
 (add-to-list 'load-path "~/.emacs.d/elpa/erc-better-scroll")
-(add-to-list 'load-path "~/.emacs.d/elpa/erc-hl-nicks-20140619.522")
-(add-to-list 'load-path "~/.emacs.d/elpa/evil-20151109.829")
-(add-to-list 'load-path "~/.emacs.d/elpa/evil-escape-20150926.2152")
+(add-to-list 'load-path "~/.emacs.d/elpa/erc-hl-nicks-20160202.1150")
+(add-to-list 'load-path "~/.emacs.d/elpa/evil-20160223.1829")
+(add-to-list 'load-path "~/.emacs.d/elpa/evil-escape-20151214.1111")
 (add-to-list 'load-path "~/.emacs.d/elpa/go-autocomplete-20150903.1940")
-(add-to-list 'load-path "~/.emacs.d/elpa/go-mode-20150817.2318")
-(add-to-list 'load-path "~/.emacs.d/elpa/go-play-20120914.1248")
+(add-to-list 'load-path "~/.emacs.d/elpa/go-mode-20160220.1751")
+(add-to-list 'load-path "~/.emacs.d/elpa/go-play-0.0.1")
 (add-to-list 'load-path "~/.emacs.d/elpa/goto-chg-20131228.659")
-(add-to-list 'load-path "~/.emacs.d/elpa/popup-20150626.711")
+(add-to-list 'load-path "~/.emacs.d/elpa/popup-20151222.1339")
 (add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-20140509.522")
-(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-20151108.1505")
-(add-to-list 'load-path "~/.emacs.d/elpa/w3m-20151013.327")
+(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-20160131.948")
+(add-to-list 'load-path "~/.emacs.d/elpa/w3m-20121224.1747")
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/cyberpunk-theme-20150828.508")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/gruvbox-theme-20150729.341")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/monokai-theme-20151022.703")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/cyberpunk-theme-20160121.1712")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/gruvbox-theme-20151227.113")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/monokai-theme-20160104.1312")
 
-(load-theme 'gruvbox t)
+(load-theme 'cyberpunk t)
 ;; cyberpunk
 ;; gruvbox
 ;; monokai
@@ -36,7 +37,7 @@
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-;;(global-linum-mode t)
+;; (global-linum-mode t)
 (blink-cursor-mode -1)
 (set-fringe-mode 0)
 (blink-cursor-mode 0)
@@ -70,7 +71,7 @@
 (require 'evil-escape)
 
 (require 'yasnippet)
-(yas-global-mode 1)
+;;(yas-global-mode 1)
 
 (require 'auto-complete-config)
 (ac-config-default)
@@ -83,6 +84,11 @@
 
 (require 'centered-cursor-mode)
 (global-set-key (kbd "M-,") 'centered-cursor-mode)
+
+(defun on-after-init ()
+	(unless (display-graphic-p (selected-frame))
+		(set-face-background 'default "unspecified-bg" (selected-frame))))
+(add-hook 'window-setup-hook 'on-after-init)
 
 (require 'erc)
 (setq erc-save-buffer-on-part t)
@@ -111,20 +117,24 @@
  '(erc-system-name "pressure679")
  '(erc-user-full-name "pressure679")
  '(inhibit-startup-screen t)
- '(linum-format "%d "))
+ '(linum-format "%d ")
+ '(menu-bar-mode nil)
+ '(show-paren-mode t)
+ ;;'(tool-bar-mode nil)
+ '(xterm-mouse-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ac-candidate-face ((t (:foreground "gray"))))
- '(ac-gtags-candidate-face ((t (:foreground "navy"))))
- '(ac-gtags-selection-face ((t (:foreground "white"))))
- '(ac-selection-face ((t (:foreground "white"))))
  '(fringe ((t (:background "color-235"))))
  '(menu ((t nil)))
  '(mode-line ((t (:background "color-243" :foreground "color-235" :box nil))))
  '(mode-line-inactive ((t (:background "color-239" :foreground "color-246" :box nil))))
+ '(ac-candidate-face ((t (:foreground "gray"))))
+ '(ac-gtags-candidate-face ((t (:foreground "navy"))))
+ '(ac-gtags-selection-face ((t (:foreground "white"))))
+ '(ac-selection-face ((t (:foreground "white"))))
  '(popup-face ((t (:foreground "black"))))
  '(popup-menu-mouse-face ((t (:foreground "white"))))
  '(popup-menu-selection-face ((t (:foreground "white"))))
