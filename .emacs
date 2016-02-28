@@ -120,21 +120,22 @@
  '(linum-format "%d ")
  '(menu-bar-mode nil)
  '(show-paren-mode t)
- ;;'(tool-bar-mode nil)
  '(xterm-mouse-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(fringe ((t (:background "color-235"))))
- '(menu ((t nil)))
- '(mode-line ((t (:background "color-243" :foreground "color-235" :box nil))))
- '(mode-line-inactive ((t (:background "color-239" :foreground "color-246" :box nil))))
+ ;; Background may also be #2E2E2D
+ '(default ((t (:inherit nil :stipple nil :background "#3C3B37" :foreground "#d3d3d3" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 128 :width normal :foundry "unknown" :family "Ubuntu Mono"))))
  '(ac-candidate-face ((t (:foreground "gray"))))
  '(ac-gtags-candidate-face ((t (:foreground "navy"))))
  '(ac-gtags-selection-face ((t (:foreground "white"))))
  '(ac-selection-face ((t (:foreground "white"))))
+ '(fringe ((t (:background "color-235"))))
+ '(menu ((t nil)))
+ '(mode-line ((t (:background "color-243" :foreground "color-235" :box nil))))
+ '(mode-line-inactive ((t (:background "color-239" :foreground "color-246" :box nil))))
  '(popup-face ((t (:foreground "black"))))
  '(popup-menu-mouse-face ((t (:foreground "white"))))
  '(popup-menu-selection-face ((t (:foreground "white"))))
