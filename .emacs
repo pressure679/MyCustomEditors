@@ -79,6 +79,7 @@
 (define-key ac-complete-mode-map "\C-n" 'ac-next)
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 
+(require 'cl)
 (require 'go-mode)
 (require 'go-autocomplete)
 
@@ -126,7 +127,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; Background may also be #2E2E2D
  '(default ((t (:inherit nil :stipple nil :background "#3C3B37" :foreground "#d3d3d3" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 128 :width normal :foundry "unknown" :family "Ubuntu Mono"))))
  '(ac-candidate-face ((t (:foreground "gray"))))
  '(ac-gtags-candidate-face ((t (:foreground "navy"))))
@@ -134,12 +134,15 @@
  '(ac-selection-face ((t (:foreground "white"))))
  '(fringe ((t (:background "color-235"))))
  '(menu ((t nil)))
- '(mode-line ((t (:background "color-243" :foreground "color-235" :box nil))))
+ '(mode-line ((t (:foreground "color-235" :box nil))))
  '(mode-line-inactive ((t (:background "color-239" :foreground "color-246" :box nil))))
  '(popup-face ((t (:foreground "black"))))
+ '(popup-isearch-match ((t (:foreground "#ff1493"))))
  '(popup-menu-mouse-face ((t (:foreground "white"))))
  '(popup-menu-selection-face ((t (:foreground "white"))))
  '(popup-scroll-bar-background-face ((t nil)))
+ '(popup-scroll-bar-foreground-face ((t nil)))
+ '(popup-tip-face ((t (:foreground "#ffffff"))))
  '(show-paren-match ((t (:foreground "green"))))
  '(speedbar-separator-face ((t (:foreground "white" :overline "gray"))) t)
  '(tool-bar ((t (:foreground "black"))))
