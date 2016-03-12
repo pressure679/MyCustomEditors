@@ -14,7 +14,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install emacs git mercurial irssi build-essential make cmake automake w3m python-dev linux-firmware gccgo-4.9 ctags tor tlp google-chrome-stable indicator-cpufreq cpufrequtils psensor lm-sensors vlc audacious spotify-client htop openssh-server fluxgui python-pip youtube-dl mp3gain synaptic terminator
+sudo apt-get install emacs git mercurial irssi build-essential make cmake automake w3m python-dev linux-firmware gccgo-4.9 ctags tor tlp google-chrome-stable indicator-cpufreq cpufrequtils psensor lm-sensors vlc audacious spotify-client htop openssh-server fluxgui python-pip youtube-dl mp3gain synaptic terminator samba system-config-samba gufw
 
 mkdir $HOME/.emacs.d | chmod $USER $HOME/.emacs.d
 cd $HOME
@@ -24,13 +24,14 @@ mkdir $HOME/.irssi
 cd $HOME/.irssi
 wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/irssiconfig
 mv irssiconfig config
-mkdir scripts/autorun
-cd scripts/autorun
-wget https://raw.githubusercontent.com/irssi/scripts.irssi.org/gh-pages/scripts/nickcolor.pl
+touch default.theme
 echo "abstracts = {" >> default.theme
 echo "  sb_background = \"%n\";" >> default.theme
 echo } >> default.theme
-
+mkdir scripts
+mkdir scripts/autorun
+cd scripts/autorun
+wget https://raw.githubusercontent.com/irssi/scripts.irssi.org/gh-pages/scripts/nickcolor.pl
 mkdir $HOME/go
 mkdir $HOME/go/wikiproj
 cd $HOME/go/wikiproj
