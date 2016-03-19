@@ -49,7 +49,7 @@
 (electric-indent-mode 1)
 (global-visual-line-mode 1)
 (linum-mode 1)
-(ac-linum-workaround)
+;; (ac-linum-workaround)
 (setq ac-auto-show-menu nil)
 ;; (glasses-mode 1)
 
