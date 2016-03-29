@@ -20,6 +20,10 @@ wget https://raw.githubusercontent.com/irssi/scripts.irssi.org/gh-pages/scripts/
 mkdir ~/go
 mkdir ~/go/wikiproj
 cd ~/go/wikiproj
-git clone 
+wget https://raw.githubusercontent.com/pressure679/WikiPagerankDB/master/sample.go
+cd ~/Downloads
+wget https://justgetflux.com/linux/xflux64.tgz
+sudo tar -xvzf xflux64.tgz -O /usr/bin
+sudo chmod +x /usr/bin/xflux
 
 echo 0 | sudo tee /sys/class/graphics/fbcon/cursor_blink
