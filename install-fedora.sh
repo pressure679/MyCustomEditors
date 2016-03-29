@@ -25,5 +25,6 @@ cd ~/Downloads
 wget https://justgetflux.com/linux/xflux64.tgz
 sudo tar -xvzf xflux64.tgz -O /usr/bin
 sudo chmod +x /usr/bin/xflux
+sudo wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/environment -O /etc
 
 echo 0 | sudo tee /sys/class/graphics/fbcon/cursor_blink
