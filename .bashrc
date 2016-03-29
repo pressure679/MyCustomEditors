@@ -117,14 +117,24 @@ alias cls="clear screen"
 alias youtube-dl="youtube-dl --prefer-ffmpeg"
 alias ec="emacsclient -t"
 alias w3m="w3m -B"
+alias xclip="xclip -selection c"
+
+if [ "$COLORTERM" == "gnome-terminal" ] || [ "$COLORTERM" == "xfce4-terminal" ]
+then
+		TERM=xterm-256color
+elif [ "$COLORTERM" == "rxvt-xpm" ]
+then
+		TERM=rxvt-256color
+fi
 
 # color codes
 ## foreground:
 ### #008700 - darkgreen
+### #a98884 - gruvbox dark fg0
 ## background:
 ### #000000 - black
 # themes:
-## cyberpunk
 ## gruvbox
 ## solarized-dark
+## cyberpunk
 ## monokai
