@@ -14,10 +14,13 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/erc-hl-nicks-20160202.1150")
 (add-to-list 'load-path "~/.emacs.d/elpa/evil-20160310.1023")
 (add-to-list 'load-path "~/.emacs.d/elpa/evil-escape-20151214.1111")
+(add-to-list 'load-path "~/.emacs.d/elpa/flymake-go-20150714.33")
+(add-to-list 'load-path "~/.emacs.d/elpa/flymake-cursor-20130822.332")
 (add-to-list 'load-path "~/.emacs.d/elpa/go-autocomplete-20150903.1940")
 (add-to-list 'load-path "~/.emacs.d/elpa/go-mode-20160310.1044")
 (add-to-list 'load-path "~/.emacs.d/elpa/go-play-0.0.1")
 (add-to-list 'load-path "~/.emacs.d/elpa/goto-chg-20131228.659")
+(add-to-list 'load-path "~/.emacs.d/elpa/hlinum-1.0")
 (add-to-list 'load-path "~/.emacs.d/elpa/popup-20151222.1339")
 (add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-20160226.1359")
 (add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-20140509.522")
@@ -32,8 +35,8 @@
 (load-theme 'gruvbox t)
 ;; cyberpunk
 ;; gruvbox
+;; solarized-dark
 ;; monokai
-;; solarized
 ;; zenburn
 
 (setq c-basic-offset 2)
@@ -42,6 +45,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (global-linum-mode t)
+(setq linum-format "  %d ")
 (blink-cursor-mode -1)
 (set-fringe-mode 0)
 (blink-cursor-mode 0)
@@ -49,20 +53,21 @@
 (electric-indent-mode 1)
 (global-visual-line-mode 1)
 (linum-mode 1)
-;; (ac-linum-workaround)
+;;(ac-linum-workaround)
 (setq ac-auto-show-menu nil)
 ;; (glasses-mode 1)
 
 (global-set-key (kbd "M-.") 'goto-line)
 (global-set-key (kbd "C-h") 'hs-toggle-hiding)
+(global-set-key (kbd "C-M-h") 'hs-hide-all)
 (global-set-key (kbd "M-j") 'other-window)
 (global-set-key (kbd "M-k") 'next-buffer)
 (global-set-key (kbd "M-l") 'previous-buffer)
 (global-set-key (kbd "M-m") 'evil-escape)
 (global-set-key (kbd "C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "C-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "C-<down>") 'shrink-window)
-(global-set-key (kbd "C-<up>") 'enlarge-window)
+(global-set-key (kbd "C-<up>") 'shrink-window)
+(global-set-key (kbd "C-<down>") 'enlarge-window)
 
 (add-hook 'go-mode-hook              ; other modes similarly
           '(lambda () (hs-minor-mode 1)))
@@ -77,8 +82,11 @@
 (evil-mode 1)
 (require 'evil-escape)
 
+(require 'flymake-cursor)
+
 (require 'go-mode)
 (require 'go-autocomplete)
+(require 'flymake-go)
 
 (require 'auto-complete-config)
 (ac-config-default)
@@ -93,6 +101,8 @@
 
 (require 'centered-cursor-mode)
 (global-set-key (kbd "M-,") 'centered-cursor-mode)
+
+(require 'hlinum)
 
 (defun on-after-init ()
 	(unless (display-graphic-p (selected-frame))
@@ -117,6 +127,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(case-fold-search nil)
+ '(custom-safe-themes
+	 (quote
+		("71ecffba18621354a1be303687f33b84788e13f40141580fa81e7840752d31bf" default)))
  '(erc-autojoin-domain-only t)
  '(erc-autojoin-mode t)
  '(erc-nick "pressure679")
@@ -128,8 +141,10 @@
  '(erc-system-name "pressure679")
  '(erc-user-full-name "pressure679")
  '(fci-rule-color "#073642")
+ '(fringe-mode nil nil (fringe))
  '(inhibit-startup-screen t)
- '(linum-format "%d ")
+ '(line-number-mode nil)
+ '(linum-format " %d  ")
  '(magit-diff-use-overlays nil)
  '(menu-bar-mode nil)
  '(show-paren-mode t)
@@ -139,17 +154,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "unspecified-bg" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
+ '(default ((t (:inherit nil :stipple nil :background "unspecified-bg" :foreground "color-229" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
  '(ac-candidate-face ((t (:foreground "gray"))))
  '(ac-gtags-candidate-face ((t (:foreground "navy"))))
  '(ac-gtags-selection-face ((t (:foreground "gray"))))
  '(ac-selection-face ((t (:foreground "navy"))))
  '(ac-yasnippet-selection-face ((t (:inherit ac-selection-face :foreground "navy"))))
- '(fringe ((t (:background "color-235"))))
- '(linum ((t (:inherit (\#00cc00 default)))))
- '(menu ((t nil)))
- '(mode-line ((t (:foreground "color-235" :box nil))))
- '(mode-line-inactive ((t (:background "color-239" :foreground "color-246" :box nil))))
+ '(fringe ((t (:background nil :foreground "#DCDCCC"))))
+ '(linum ((t (:inherit (\#00cc00 default) :background "unspecified-bg" :foreground "#9FC59F"))))
+ '(linum-highlight-face ((t (:inherit default :foreground "#fabd2f"))))
+ '(menu ((t (:background nil))))
+ '(mode-line ((t (:background nil :foreground "#A89984" :box nil))))
+ '(mode-line-inactive ((t (:background nil :foreground "#A89984" :box nil))))
  '(popup-face ((t (:foreground "navy"))))
  '(popup-isearch-match ((t (:foreground "#ff1493"))))
  '(popup-menu-face ((t (:inherit popup-face :foreground "navy"))))
@@ -158,9 +174,10 @@
  '(popup-scroll-bar-background-face ((t nil)))
  '(popup-scroll-bar-foreground-face ((t nil)))
  '(popup-tip-face ((t (:foreground "#ffffff"))))
+ '(region ((t (:background "unspecified-bg" :foreground "DarkGoldenRod"))))
  '(show-paren-match ((t (:foreground "green"))))
  '(speedbar-separator-face ((t (:foreground "white" :overline "gray"))) t)
- '(tool-bar ((t (:foreground "black"))))
+ '(tool-bar ((t (:background nil :foreground "black"))))
  '(w3m-header-line-location-content ((t (:foreground "DarkGoldenrod"))) t)
  '(w3m-header-line-location-title ((t (:foreground "Blue"))) t)
  '(w3m-history-current-url ((t (:foreground "navy"))) t)
