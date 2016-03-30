@@ -39,22 +39,21 @@
 ;; monokai
 ;; zenburn
 
-(setq backup-directory-alist
-			`((".emacs.d/auto-save" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-			          `((".emacs.d/auto-save" ,temporary-file-directory t)))
+(defvar my-auto-save-folder "~/.emacs.d/auto-save/")
+(setq auto-save-list-file-prefix "~/.emacs.d/auto-save/save-")
+(setq auto-save-file-name-transforms `((".*" ,my-auto-save-folder t)))
+(setq tramp-auto-save-directory my-auto-save-folder)
 
-(setq auto-save-mode 1
-			auto-save-interval 120
-			auto-save-timeout 119
-			default tab-width 2
-			linum-format "  %d "
-			ac-auto-show-menu nil)
-(c-basic-offset 2)
+(setq auto-save-mode 1)
+(setq auto-save-interval 120)
+(setq auto-save-timeout 119)
+(setq c-basic-offset 2)
+(setq-default tab-width 2)
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (global-linum-mode t)
+(setq linum-format "  %d ")
 (blink-cursor-mode -1)
 (set-fringe-mode 0)
 (blink-cursor-mode 0)
@@ -62,8 +61,9 @@
 (electric-indent-mode 1)
 (global-visual-line-mode 1)
 (linum-mode 1)
-(ac-linum-workaround)
-;; (glasses-mode 1)
+;;(ac-linum-workaround)
+(setq ac-auto-show-menu nil)
+
 
 (global-set-key (kbd "M-.") 'goto-line)
 (global-set-key (kbd "C-h") 'hs-toggle-hiding)
@@ -113,8 +113,8 @@
 (require 'hlinum)
 
 (defun on-after-init ()
-	(unless (display-graphic-p (selected-frame))
-		(set-face-background 'default "unspecified-bg" (selected-frame))))
+  (unless (display-graphic-p (selected-frame))
+    (set-face-background 'default "unspecified-bg" (selected-frame))))
 (add-hook 'window-setup-hook 'on-after-init)
 
 (require 'erc)
@@ -152,7 +152,7 @@
  '(fringe-mode nil nil (fringe))
  '(inhibit-startup-screen t)
  '(line-number-mode nil)
- '(linum-format " %d  ")
+ '(linum-format "  %d ")
  '(magit-diff-use-overlays nil)
  '(menu-bar-mode nil)
  '(show-paren-mode t)
@@ -162,7 +162,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:background "unspecified-bg" :foreground "default"))))
+ '(default ((t (:background "unspecified-bg" :foreground "unspecified-fg"))))
  '(ac-candidate-face ((t (:foreground "gray"))))
  '(ac-gtags-candidate-face ((t (:foreground "navy"))))
  '(ac-gtags-selection-face ((t (:foreground "gray"))))
@@ -170,10 +170,10 @@
  '(ac-yasnippet-selection-face ((t (:inherit ac-selection-face :foreground "darkgreen"))))
  '(fringe ((t (:background nil :foreground "#DCDCCC"))))
  '(linum ((t (:background "unspecified-bg" :foreground "#9FC59F"))))
- '(linum-highlight-face ((t (:foreground "d65d0e"))))
+ '(linum-highlight-face ((t (:foreground "#d65d0e"))))
  '(menu ((t (:background nil))))
- '(mode-line ((t (:foreground "color-235" :box nil))))
- '(mode-line-inactive ((t (:background nil :foreground "color-246" :box nil))))
+ '(mode-line ((t (:background nil :foreground "color-246" :box nil))))
+ '(mode-line-inactive ((t (:background nil :foreground "color-235" :box nil))))
  '(popup-face ((t (:foreground "darkgreen"))))
  '(popup-isearch-match ((t (:foreground "#ff1493"))))
  '(popup-menu-face ((t (:foreground "darkgreen"))))
@@ -182,7 +182,7 @@
  '(popup-scroll-bar-background-face ((t nil)))
  '(popup-scroll-bar-foreground-face ((t nil)))
  '(popup-tip-face ((t (:foreground "#ffffff"))))
- '(region ((t (:background "unspecified-bg" :foreground "DarkGoldenRod"))))
+ '(region ((t (:background "unspecified-bg" :foreground "darkgreen"))))
  '(show-paren-match ((t (:foreground "darkgreen"))))
  '(speedbar-separator-face ((t (:foreground "white" :overline "gray"))) t)
  '(tool-bar ((t (:background nil :foreground "black"))))
