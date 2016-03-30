@@ -39,13 +39,22 @@
 ;; monokai
 ;; zenburn
 
-(setq c-basic-offset 2)
-(setq-default tab-width 2)
+(setq backup-directory-alist
+			`((".emacs.d/auto-save" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+			          `((".emacs.d/auto-save" ,temporary-file-directory t)))
+
+(setq auto-save-mode 1
+			auto-save-interval 120
+			auto-save-timeout 119
+			default tab-width 2
+			linum-format "  %d "
+			ac-auto-show-menu nil)
+(c-basic-offset 2)
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (global-linum-mode t)
-(setq linum-format "  %d ")
 (blink-cursor-mode -1)
 (set-fringe-mode 0)
 (blink-cursor-mode 0)
@@ -53,8 +62,7 @@
 (electric-indent-mode 1)
 (global-visual-line-mode 1)
 (linum-mode 1)
-;;(ac-linum-workaround)
-(setq ac-auto-show-menu nil)
+(ac-linum-workaround)
 ;; (glasses-mode 1)
 
 (global-set-key (kbd "M-.") 'goto-line)
@@ -127,9 +135,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(case-fold-search nil)
- '(custom-safe-themes
-	 (quote
-		("71ecffba18621354a1be303687f33b84788e13f40141580fa81e7840752d31bf" default)))
+;; '(custom-safe-themes
+;;	 (quote
+;;		("71ecffba18621354a1be303687f33b84788e13f40141580fa81e7840752d31bf" default)))
  '(erc-autojoin-domain-only t)
  '(erc-autojoin-mode t)
  '(erc-nick "pressure679")
@@ -154,33 +162,33 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "unspecified-bg" :foreground "default" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
+ '(default ((t (:background "unspecified-bg" :foreground "default"))))
  '(ac-candidate-face ((t (:foreground "gray"))))
  '(ac-gtags-candidate-face ((t (:foreground "navy"))))
  '(ac-gtags-selection-face ((t (:foreground "gray"))))
  '(ac-selection-face ((t (:foreground "navy"))))
- '(ac-yasnippet-selection-face ((t (:inherit ac-selection-face :foreground "navy"))))
+ '(ac-yasnippet-selection-face ((t (:inherit ac-selection-face :foreground "darkgreen"))))
  '(fringe ((t (:background nil :foreground "#DCDCCC"))))
- '(linum ((t (:inherit (\#00cc00 default) :background "unspecified-bg" :foreground "#9FC59F"))))
- '(linum-highlight-face ((t (:inherit default :foreground "#FE8019"))))
+ '(linum ((t (:background "unspecified-bg" :foreground "#9FC59F"))))
+ '(linum-highlight-face ((t (:foreground "d65d0e"))))
  '(menu ((t (:background nil))))
- '(mode-line ((t (:background nil :foreground "color-246" :box nil))))
- '(mode-line-inactive ((t (:background nil :foreground "color-235" :box nil))))
- '(popup-face ((t (:foreground "navy"))))
+ '(mode-line ((t (:foreground "color-235" :box nil))))
+ '(mode-line-inactive ((t (:background nil :foreground "color-246" :box nil))))
+ '(popup-face ((t (:foreground "darkgreen"))))
  '(popup-isearch-match ((t (:foreground "#ff1493"))))
- '(popup-menu-face ((t (:inherit popup-face :foreground "navy"))))
+ '(popup-menu-face ((t (:foreground "darkgreen"))))
  '(popup-menu-mouse-face ((t (:foreground "white"))))
  '(popup-menu-selection-face ((t (:foreground "white"))))
  '(popup-scroll-bar-background-face ((t nil)))
  '(popup-scroll-bar-foreground-face ((t nil)))
  '(popup-tip-face ((t (:foreground "#ffffff"))))
- '(region ((t (:background "unspecified-bg" :foreground "darkgreen"))))
- '(show-paren-match ((t (:foreground "green"))))
+ '(region ((t (:background "unspecified-bg" :foreground "DarkGoldenRod"))))
+ '(show-paren-match ((t (:foreground "darkgreen"))))
  '(speedbar-separator-face ((t (:foreground "white" :overline "gray"))) t)
  '(tool-bar ((t (:background nil :foreground "black"))))
- '(w3m-header-line-location-content ((t (:foreground "darkgreen"))) t)
- '(w3m-header-line-location-title ((t (:foreground "Blue"))) t)
- '(w3m-history-current-url ((t (:foreground "navy"))) t)
+ '(w3m-header-line-location-content ((t (:foreground "#a89984"))) t)
+ '(w3m-header-line-location-title ((t (:foreground "darkgreen"))) t)
+ '(w3m-history-current-url ((t (:foreground "darkgreen"))) t)
  '(w3m-tab-background ((t (:foreground "black"))) t)
- '(w3m-tab-selected ((t (:foreground "navy"))) t)
+ '(w3m-tab-selected ((t (:foreground "darkgreen"))) t)
  '(w3m-tab-unselected ((t (:foreground "darkgreen"))) t))
