@@ -1,4 +1,4 @@
-sudo dnf install emacs git mercurial irssi make cmake automake w3m ctags tlp google-chrome-stable audacious htop openssh-server python-pip youtube-dl terminator samba system-config-samba xclip golang taglib-devel gimp mplayer mpg123
+sudo dnf install emacs git mercurial irssi make cmake automake w3m ctags tlp google-chrome-stable audacious htop openssh-server python-pip youtube-dl terminator samba system-config-samba xclip golang taglib-devel gimp mplayer mpg123 terminator
 
 mkdir ~/.emacs.d
 wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/.emacs
@@ -28,8 +28,3 @@ mkdir id3go
 cd id3go
 wget https://raw.githubusercontent.com/pressure679/MP3ID3Tagger/master/sample.go
 sudo wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/environment -O /etc
-go get github.com/dustin/go-wikiparse
-go get github.com/pressure679/dijkstra
-go get github.com/wtolson/go-taglib
-
-echo 0 | sudo tee /sys/class/graphics/fbcon/cursor_blink
