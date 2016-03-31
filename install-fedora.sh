@@ -1,6 +1,4 @@
-sudo dnf update
-sudo dnf upgrade
-sudo dnf install emacs git mercurial irssi make cmake automake w3m ctags tlp google-chrome-stable audacious htop openssh-server python-pip youtube-dl terminator samba system-config-samba xclip golang taglib-devel gimp
+sudo dnf install emacs git mercurial irssi make cmake automake w3m ctags tlp google-chrome-stable audacious htop openssh-server python-pip youtube-dl terminator samba system-config-samba xclip golang taglib-devel gimp mplayer mpg123
 
 mkdir ~/.emacs.d
 wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/.emacs
