@@ -80,7 +80,8 @@ wget https://raw.githubusercontent.com/irssi/scripts.irssi.org/gh-pages/scripts/
 mkdir $HOME/go; mkdir $HOME/go/wikiproj; cd $HOME/go/wikiproj
 wget https://raw.githubusercontent.com/pressure679/WikiPagerankDB/master/sample.go
 
-mkdir $HOME/go/mkdir id3go
+cd ..
+
 cd $HOME/go/id3go
 wget https://raw.githubusercontent.com/pressure679/MP3ID3Tagger/master/sample.go
 go build sample.go
