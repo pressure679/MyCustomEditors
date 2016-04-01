@@ -1,6 +1,6 @@
 # apt and fingerprint key for f.lux indicator applet from https://launchpad.net/~kilian/+archive/ubuntu/f.lux
-sudo add-apt-repository ppa:kilian/f.lux
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E602B5DDEA4951FB628E7BD4FAEB83059BD4ED25
+# sudo add-apt-repository ppa:kilian/f.lux
+# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E602B5DDEA4951FB628E7BD4FAEB83059BD4ED25
 # apt and fingerprint key for tlp power management software from https://launchpad.net/~linrunner/+archive/ubuntu/tlp
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 2042F03C5FABD0BA2CED40412B3F92F902D65EFF
@@ -17,7 +17,9 @@ sudo chown /usr/bin/youtube-dl
 sudo chmod +x /usr/bin/youtube-dl
 sudo apt-get update
 # sudo apt-get upgrade
-sudo apt-get install emacs git mercurial irssi build-essential make cmake automake w3m python-dev linux-firmware ctags tor tlp google-chrome-stable indicator-cpufreq cpufrequtils psensor lm-sensors vlc audacious spotify-client htop openssh-server fluxgui python-pip youtube-dl mp3gain synaptic terminator samba system-config-samba gufw xclip libtagc0-dev
+sudo apt-get install emacs git mercurial irssi make cmake automake w3m ctags tlp google-chrome-stable lm-sensors vlc audacious spotify-client htop openssh-server python-pip youtube-dl mp3gain synaptic terminator samba system-config-samba gufw xclip libtagc0-dev
+
+sudo pip install livestreamer livestreamer-curses
 
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo apt-get update
