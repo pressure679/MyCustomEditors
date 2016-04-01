@@ -91,4 +91,10 @@ mkdir .w3m
 cd .w3m
 wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/bookmark.html
 
+cd $HOME
+rm .bashrc
+wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/.bashrc
+wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/.emacs
+
 # remember to configure tlp and enable programs that are to autostart (go doc, emacs server and xflux)
+# also, you probably have to update emacs packages
