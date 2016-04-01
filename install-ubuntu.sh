@@ -86,4 +86,9 @@ cd $HOME/go/id3go
 wget https://raw.githubusercontent.com/pressure679/MP3ID3Tagger/master/sample.go
 go build sample.go
 
+cd $HOME
+mkdir .w3m
+cd .w3m
+wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/bookmark.html
+
 # remember to configure tlp and enable programs that are to autostart (go doc, emacs server and xflux)
