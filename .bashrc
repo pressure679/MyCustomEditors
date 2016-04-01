@@ -139,8 +139,8 @@ fi
 ## monokai
 
 echo -ne '\e]10;#A89984\a'
-echo -ne '\e]11;#000000\a'
-echo -ne '\e]12;#A7A7A7\a'
+# echo -ne '\e]11;#000000\a'
+# echo -ne '\e]12;#A7A7A7\a'
 echo -ne '\e]4;0;#282828\a'
 echo -ne '\e]4;1;#CC241D\a'
 echo -ne '\e]4;2;#98971A\a'
