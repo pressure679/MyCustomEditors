@@ -12,9 +12,51 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4CCA1EAF950CEE4AB8
 sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free" 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 
+sudo wget https://yt-dl.org/downloads/2016.03.27/youtube-dl -O /usr/bin/youtube-dl
+sudo chown /usr/bin/youtube-dl
+sudo chmod +x /usr/bin/youtube-dl
 sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install emacs git mercurial irssi build-essential make cmake automake w3m python-dev linux-firmware ctags tor tlp google-chrome-stable indicator-cpufreq cpufrequtils psensor lm-sensors vlc audacious spotify-client htop openssh-server fluxgui python-pip youtube-dl mp3gain synaptic terminator samba system-config-samba gufw xclip
+# sudo apt-get upgrade
+sudo apt-get install emacs git mercurial irssi build-essential make cmake automake w3m python-dev linux-firmware ctags tor tlp google-chrome-stable indicator-cpufreq cpufrequtils psensor lm-sensors vlc audacious spotify-client htop openssh-server fluxgui python-pip youtube-dl mp3gain synaptic terminator samba system-config-samba gufw xclip libtagc0-dev
+
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo apt-get update
+sudo echo "deb http://dk.archive.ubuntu.com/ubuntu/ wily main restricted universe multiverse" >> /etc/apt/sources.list
+sudo echo "deb-src http://dk.archive.ubuntu.com/ubuntu/ wily main restricted universe multiverse" >> /etc/apt/sources.list
+sudo apt-get install ffmpeg
+sudo rm /etc/apt/sources.list
+sudo mv /etc/apt/sources.list.bak /etc/apt/sources.list
+sudo apt-get update
+
+cd ~/Downloads
+wget https://justgetflux.com/linux/xflux64.tgz
+sudo tar -C /usr/bin -xf xflux64.tgz
+sudo chown root /usr/bin/xflux
+
+wget https://storage.googleapis.com/golang/go1.5.3.linux-amd64.tar.gz
+tar -C /usr/share -xzf go1.5.3.linux-amd64.tar.gz
+sudo chown root /usr/share/go -R
+sudo rm /etc/environment
+wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/environment -O /etc
+
+export GOPATH=$HOME/go
+export GOROOT=/usr/share/go
+go get github.com/dustin/go-wikiparse
+go get github.com/alixaxel/pagerank
+go get github.com/smallsmallwolf/dijkstra
+go get github.com/wtolson/go-taglib
+go get github.com/sjwhitworth/golearn
+cd $GOPATH/github.com/sjwhitworth/golearn
+go get ./...
+
+cd $HOME/Downloads
+wget http://www.pagruli.esy.es/files/themes/gtk/Ambiance-Green-Pro.tar.gz
+sudo tar -C /usr/share/themes -xf Ambiance-Green-Pro.tar.gz
+sudo chown root /usr/share/themes/Ambiance-Green-Pro -R
+
+wget http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-258269.jpg -O /usr/share/backdrops
+wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/lightdm-gtk-greeter.conf -O /etc/lightdm
+sudo chown /etc/lightdm/lightdm-gtk-greeter.conf
 
 mkdir $HOME/.emacs.d | chmod $USER $HOME/.emacs.d
 cd $HOME
@@ -32,8 +74,13 @@ mkdir scripts
 mkdir scripts/autorun
 cd scripts/autorun
 wget https://raw.githubusercontent.com/irssi/scripts.irssi.org/gh-pages/scripts/nickcolor.pl
-mkdir $HOME/go
-mkdir $HOME/go/wikiproj
-cd $HOME/go/wikiproj
 
-echo 0 | sudo tee /sys/class/graphics/fbcon/cursor_blink
+mkdir $HOME/go; mkdir $HOME/go/wikiproj; cd $HOME/go/wikiproj
+wget https://raw.githubusercontent.com/pressure679/WikiPagerankDB/master/sample.go
+
+mkdir $HOME/go/mkdir id3go
+cd $HOME/go/id3go
+wget https://raw.githubusercontent.com/pressure679/MP3ID3Tagger/master/sample.go
+go build sample.go
+
+# remember to configure tlp and enable programs that are to autostart (go doc, emacs server and xflux)
