@@ -95,6 +95,7 @@ cd $HOME
 rm .bashrc
 wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/.bashrc
 wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/.emacs
+git clone https://github.com/pressure679/go-mode
 
 # remember to configure tlp and enable programs that are to autostart (go doc, emacs server and xflux)
 # also, you probably have to update emacs packages
