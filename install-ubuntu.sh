@@ -12,12 +12,17 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4CCA1EAF950CEE4AB8
 sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free" 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 
-sudo wget https://yt-dl.org/downloads/2016.03.27/youtube-dl -O /usr/bin/youtube-dl
-sudo chown /usr/bin/youtube-dl
-sudo chmod +x /usr/bin/youtube-dl
 sudo apt-get update
 # sudo apt-get upgrade
 sudo apt-get install emacs git mercurial irssi make cmake automake w3m ctags tlp lm-sensors vlc audacious spotify-client htop openssh-server python-pip youtube-dl mp3gain synaptic terminator samba system-config-samba gufw xclip libtagc0-dev golang-go.tools
+
+wget https://yt-dl.org/downloads/2016.03.27/youtube-dl
+mkdir /usr/share/youtube-dl
+mkdir /usr/share/youtube-dl/bin
+sudo mv youtube-dl /usr/share/youtube-dl/bin/youtube-dl
+sudo chown root /usr/share/youtube-dl/bin/youtube-dl
+sudo chmod +x /usr/share/youtube-dl/bin/youtube-dl
+sudo ln -s /usr/share/youtube-dl/bin/youtube-dl /usr/bin
 
 sudo pip install livestreamer livestreamer-curses
 
