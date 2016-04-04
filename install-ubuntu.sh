@@ -36,7 +36,7 @@ sudo tar -C /usr/bin -xf xflux64.tgz
 sudo chown root /usr/bin/xflux
 
 wget https://storage.googleapis.com/golang/go1.5.3.linux-amd64.tar.gz
-tar -C /usr/share -xzf go1.5.3.linux-amd64.tar.gz
+sudo tar -C /usr/share -xzf go1.5.3.linux-amd64.tar.gz
 sudo chown root /usr/share/go -R
 sudo rm /etc/environment
 wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/environment -O /etc
