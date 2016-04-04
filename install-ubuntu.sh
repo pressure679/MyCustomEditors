@@ -58,7 +58,7 @@ sudo chown root /usr/share/themes/Ambiance-Green-Pro -R
 
 wget http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-258269.jpg -O /usr/share/backdrops
 wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/lightdm-gtk-greeter.conf -O /etc/lightdm
-sudo chown /etc/lightdm/lightdm-gtk-greeter.conf
+sudo chown root /etc/lightdm/lightdm-gtk-greeter.conf
 
 mkdir $HOME/.emacs.d | chmod $USER $HOME/.emacs.d
 cd $HOME
