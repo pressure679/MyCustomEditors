@@ -48,7 +48,7 @@ go get github.com/alixaxel/pagerank
 go get github.com/smallsmallwolf/dijkstra
 go get github.com/wtolson/go-taglib
 go get github.com/sjwhitworth/golearn
-cd $GOPATH/github.com/sjwhitworth/golearn
+cd $GOPATH/src/github.com/sjwhitworth/golearn
 go get ./...
 
 cd $HOME/Downloads
