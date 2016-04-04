@@ -17,7 +17,7 @@ sudo chown /usr/bin/youtube-dl
 sudo chmod +x /usr/bin/youtube-dl
 sudo apt-get update
 # sudo apt-get upgrade
-sudo apt-get install emacs git mercurial irssi make cmake automake w3m ctags tlp google-chrome-stable lm-sensors vlc audacious spotify-client htop openssh-server python-pip youtube-dl mp3gain synaptic terminator samba system-config-samba gufw xclip libtagc0-dev
+sudo apt-get install emacs git mercurial irssi make cmake automake w3m ctags tlp google-chrome-stable lm-sensors vlc audacious spotify-client htop openssh-server python-pip youtube-dl mp3gain synaptic terminator samba system-config-samba gufw xclip libtagc0-dev godoc
 
 sudo pip install livestreamer livestreamer-curses
 
