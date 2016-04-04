@@ -56,8 +56,8 @@ wget http://www.pagruli.esy.es/files/themes/gtk/Ambiance-Green-Pro.tar.gz
 sudo tar -C /usr/share/themes -xf Ambiance-Green-Pro.tar.gz
 sudo chown root /usr/share/themes/Ambiance-Green-Pro -R
 
-wget http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-258269.jpg -O /usr/share/backdrops
-wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/lightdm-gtk-greeter.conf -O /etc/lightdm
+sudo wget http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-258269.jpg -O /usr/share/backdrops
+sudo wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/lightdm-gtk-greeter.conf -O /etc/lightdm
 sudo chown root /etc/lightdm/lightdm-gtk-greeter.conf
 
 mkdir $HOME/.emacs.d | chmod $USER $HOME/.emacs.d
