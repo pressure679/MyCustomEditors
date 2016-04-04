@@ -17,7 +17,7 @@ sudo chown /usr/bin/youtube-dl
 sudo chmod +x /usr/bin/youtube-dl
 sudo apt-get update
 # sudo apt-get upgrade
-sudo apt-get install emacs git mercurial irssi make cmake automake w3m ctags tlp google-chrome-stable lm-sensors vlc audacious spotify-client htop openssh-server python-pip youtube-dl mp3gain synaptic terminator samba system-config-samba gufw xclip libtagc0-dev godoc
+sudo apt-get install emacs git mercurial irssi make cmake automake w3m ctags tlp google-chrome-stable lm-sensors vlc audacious spotify-client htop openssh-server python-pip youtube-dl mp3gain synaptic terminator samba system-config-samba gufw xclip libtagc0-dev
 
 sudo pip install livestreamer livestreamer-curses
 
@@ -25,7 +25,7 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo apt-get update
 sudo echo "deb http://dk.archive.ubuntu.com/ubuntu/ wily main restricted universe multiverse" >> /etc/apt/sources.list
 sudo echo "deb-src http://dk.archive.ubuntu.com/ubuntu/ wily main restricted universe multiverse" >> /etc/apt/sources.list
-sudo apt-get install ffmpeg
+sudo apt-get install ffmpeg godoc
 sudo rm /etc/apt/sources.list
 sudo mv /etc/apt/sources.list.bak /etc/apt/sources.list
 sudo apt-get update
