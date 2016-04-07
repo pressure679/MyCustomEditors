@@ -2,7 +2,6 @@
 (unless (server-running-p)
   (server-start))
 
-
 (require 'package)
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
@@ -32,12 +31,16 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/zenburn-theme-20160302.58")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/color-theme-20080305.34/themes")
 
-(load-theme 'gruvbox t)
+(load-theme 'cyberpunk t)
 ;; cyberpunk
 ;; gruvbox
 ;; solarized-dark
 ;; monokai
 ;; zenburn
+
+;; (add-to-list 'default-frame-alist '(foreground-color . "#A89984"))
+(add-to-list 'default-frame-alist '(foreground-color . "unspecified-fg"))
+(add-to-list 'default-frame-alist '(background-color . "unspecified-bg"))
 
 (defvar my-auto-save-folder "~/.emacs.d/auto-save/")
 (setq auto-save-list-file-prefix "~/.emacs.d/auto-save/save-")
@@ -61,8 +64,9 @@
 (electric-indent-mode 1)
 (global-visual-line-mode 1)
 (linum-mode 1)
-;;(ac-linum-workaround)
+(ac-linum-workaround)
 (setq ac-auto-show-menu nil)
+(setq-default cursor-type 'bar)
 
 
 (global-set-key (kbd "M-.") 'goto-line)
@@ -134,10 +138,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#657b83"])
  '(case-fold-search nil)
-;; '(custom-safe-themes
-;;	 (quote
-;;		("71ecffba18621354a1be303687f33b84788e13f40141580fa81e7840752d31bf" default)))
+ '(compilation-message-face (quote default))
+ '(cua-global-mark-cursor-color "#2aa198")
+ '(cua-normal-cursor-color "#839496")
+ '(cua-overwrite-cursor-color "#b58900")
+ '(cua-read-only-cursor-color "#859900")
+ '(cursor-in-non-selected-windows nil)
+ '(custom-safe-themes (quote ("badc4f9ae3ee82a5ca711f3fd48c3f49ebe20e6303bba1912d4e2d19dd60ec98" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(erc-autojoin-domain-only t)
  '(erc-autojoin-mode t)
  '(erc-nick "pressure679")
@@ -162,33 +171,36 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:background "unspecified-bg" :foreground "unspecified-fg"))))
- '(ac-candidate-face ((t (:foreground "gray"))))
- '(ac-gtags-candidate-face ((t (:foreground "navy"))))
- '(ac-gtags-selection-face ((t (:foreground "gray"))))
- '(ac-selection-face ((t (:foreground "navy"))))
- '(ac-yasnippet-selection-face ((t (:inherit ac-selection-face :foreground "darkgreen"))))
+ '(default ((t (:inherit nil :stipple nil :background "unspecified-bg" :foreground "#a89984" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
+ '(ac-candidate-face ((t (:foreground "gray" :background nil))))
+ '(ac-completion-face ((t (:foreground "unspecified-fg" :background nil))))
+ '(ac-gtags-candidate-face ((t (:foreground "navy" :background nil))))
+ '(ac-gtags-selection-face ((t (:foreground "gray" :background nil))))
+ '(ac-selection-face ((t (:foreground "navy" :background nil))))
+ '(ac-yasnippet-selection-face ((t (:foreground "darkgreen" :background nil))))
+ '(cursor ((t (:background nil :foreground "unspecified-fg"))))
  '(fringe ((t (:background nil :foreground "#DCDCCC"))))
- '(linum ((t (:background "unspecified-bg" :foreground "#9FC59F"))))
- '(linum-highlight-face ((t (:foreground "#d65d0e"))))
+ '(linum ((t (:background nil :foreground "darkgreen"))))
+ '(linum-highlight-face ((t (:foreground "#d65d0e" :background nil))))
  '(menu ((t (:background nil))))
  '(mode-line ((t (:background nil :foreground "color-246" :box nil))))
  '(mode-line-inactive ((t (:background nil :foreground "color-235" :box nil))))
- '(popup-face ((t (:foreground "darkgreen"))))
- '(popup-isearch-match ((t (:foreground "#ff1493"))))
- '(popup-menu-face ((t (:foreground "darkgreen"))))
- '(popup-menu-mouse-face ((t (:foreground "white"))))
- '(popup-menu-selection-face ((t (:foreground "white"))))
+ '(popup-face ((t (:foreground "darkgreen" :background nil))))
+ '(popup-isearch-match ((t (:foreground "#ff1493" :background nil))))
+ '(popup-menu-face ((t (:foreground "darkgreen" :background nil))))
+ '(popup-menu-mouse-face ((t (:foreground "unspecified-fg" :background nil))))
+ '(popup-menu-selection-face ((t (:foreground "unspecified-fg" :background nil))))
  '(popup-scroll-bar-background-face ((t nil)))
  '(popup-scroll-bar-foreground-face ((t nil)))
- '(popup-tip-face ((t (:foreground "#ffffff"))))
- '(region ((t (:background "unspecified-bg" :foreground "darkgreen"))))
- '(show-paren-match ((t (:foreground "darkgreen"))))
- '(speedbar-separator-face ((t (:foreground "white" :overline "gray"))) t)
+ '(popup-tip-face ((t (:foreground "unspecified-fg"))))
+ '(region ((t (:background nil :foreground "darkgreen"))))
+ '(show-paren-match ((t (:foreground "red" :background nil))))
+ '(speedbar-separator-face ((t (:foreground "unspecified-fg" :overline "default"))) t)
  '(tool-bar ((t (:background nil :foreground "black"))))
- '(w3m-header-line-location-content ((t (:foreground "#a89984"))) t)
- '(w3m-header-line-location-title ((t (:foreground "darkgreen"))) t)
- '(w3m-history-current-url ((t (:foreground "darkgreen"))) t)
- '(w3m-tab-background ((t (:foreground "black"))) t)
- '(w3m-tab-selected ((t (:foreground "darkgreen"))) t)
- '(w3m-tab-unselected ((t (:foreground "darkgreen"))) t))
+ '(w3m-header-line-location-content ((t (:foreground "#a89984" :background nil))) t)
+ '(w3m-header-line-location-title ((t (:foreground "darkgreen" :background nil))) t)
+ '(w3m-history-current-url ((t (:foreground "darkgreen" :background nil))) t)
+ '(w3m-tab-background ((t (:foreground "black" :background nil))) t)
+ '(w3m-tab-selected ((t (:foreground "darkgreen" :background nil))) t)
+ '(w3m-tab-unselected ((t (:foreground "darkgreen" :background nil))) t)
+ '(yas-field-highlight-face ((t :foreground "unspecified-fg" :background nil))))
