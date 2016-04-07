@@ -59,15 +59,15 @@ fi
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[00;31m\]\T\[\033[00m\] - \[\033[01;32m\]\u\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\T - \u\$ '
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
+		xterm*|rxvt*)
+				PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+		;;
 *)
     ;;
 esac
@@ -118,28 +118,37 @@ alias youtube-dl="youtube-dl --prefer-ffmpeg"
 alias ec="emacsclient -t"
 alias w3m="w3m -B"
 alias xclip="xclip -selection c"
+alias tmux="xterm-256color tmux"
+export TERM="xterm-256color"
 
 if [ "$COLORTERM" == "gnome-terminal" ] || [ "$COLORTERM" == "xfce4-terminal" ]
 then
 		TERM=xterm-256color
-elif [ "$COLORTERM" == "rxvt-xpm" ]
+elif [ "$COLORTERM" == "xterm" ]
 then
-		TERM=rxvt-256color
+		TERM=xterm-256color
+fi
+if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
+    export TERM=xterm-256color
 fi
 
 # color codes
 ## foreground:
 ### #008700 - darkgreen
+### #a89984
 ## background:
 ### #000000 - black
+### #300A24 - ambience
 # themes:
-## cyberpunk
 ## gruvbox
+## cyberpunk
 ## solarized-dark
 ## monokai
 
 echo -ne '\e]10;#A89984\a'
-# echo -ne '\e]11;#000000\a'
+echo -ne '\e]11;#A89984\a'
+# echo -ne '\e]11;#300A24\a'
+# echo -ne '\e]12;#A89984\a'
 # echo -ne '\e]12;#A7A7A7\a'
 echo -ne '\e]4;0;#282828\a'
 echo -ne '\e]4;1;#CC241D\a'
