@@ -189,7 +189,7 @@ rm undo-tree-*.el
 
 mkdir themes
 wget https://melpa.org/packages/cyberpunk-theme-20160121.1712.el
-cp cyberpunk-theme-*.el themes/cyberpunkt-theme.el
+cp cyberpunk-theme-*.el themes/cyberpunk-theme.el
 rm cyberpunk-theme-*.el
 
 wget https://melpa.org/packages/gruvbox-theme-20151227.113.el
