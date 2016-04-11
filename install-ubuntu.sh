@@ -14,7 +14,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 
 sudo apt-get update
 # sudo apt-get upgrade
-sudo apt-get install emacs git mercurial irssi make cmake automake w3m ctags tlp lm-sensors vlc audacious spotify-client htop openssh-server python-pip youtube-dl mp3gain synaptic terminator samba system-config-samba gufw xclip libtagc0-dev golang-go.tools
+sudo apt-get install git mercurial irssi make cmake automake w3m ctags tlp lm-sensors vlc audacious spotify-client htop openssh-server python-pip youtube-dl mp3gain synaptic terminator samba system-config-samba gufw xclip libtagc0-dev golang-go.tools
 
 wget https://yt-dl.org/downloads/2016.03.27/youtube-dl
 mkdir /usr/share/youtube-dl
@@ -27,10 +27,10 @@ sudo ln -s /usr/share/youtube-dl/bin/youtube-dl /usr/bin
 sudo pip install livestreamer livestreamer-curses
 
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
-sudo apt-get update
 sudo echo "deb http://dk.archive.ubuntu.com/ubuntu/ wily main restricted universe multiverse" >> /etc/apt/sources.list
 sudo echo "deb-src http://dk.archive.ubuntu.com/ubuntu/ wily main restricted universe multiverse" >> /etc/apt/sources.list
-sudo apt-get install ffmpeg
+sudo apt-get update
+sudo apt-get install ffmpeg emacs
 sudo rm /etc/apt/sources.list
 sudo mv /etc/apt/sources.list.bak /etc/apt/sources.list
 sudo apt-get update
@@ -53,6 +53,7 @@ sudo chown root /etc/environment
 
 export GOPATH=$HOME/go
 export GOROOT=/usr/share/go
+sudo ln -s /usr/share/go/bin/* /usr/bin
 go get github.com/dustin/go-wikiparse
 go get github.com/alixaxel/pagerank
 go get github.com/smallsmallwolf/dijkstra
@@ -62,13 +63,18 @@ cd $GOPATH/src/github.com/sjwhitworth/golearn
 go get ./...
 
 cd $HOME/Downloads
-wget https://drive.google.com/file/d/0B7iDWdwgu9QAZTI2YXNZSUJ4Y00/Ambiance-Blackout-Flat-Colors-16-04-1-LTS-GTK-3-18-Theme.tar.gz
+https://drive.google.com/file/d/0B7iDWdwgu9QAZTI2YXNZSUJ4Y00/Ambiance-Blackout-Flat-Colors-16-04-1-LTS-GTK-3-18-Theme.tar.gz
 sudo tar -C /usr/share/themes -xf *Ambiance*.tar.gz
 sudo chown root /usr/share/themes/Ambiance* -R
 
-sudo wget http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-258269.jpg -O /usr/share/backdrops
-sudo wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/lightdm-gtk-greeter.conf -O /etc/lightdm
-sudo chown root /etc/lightdm/lightdm-gtk-greeter.conf
+sudo wget http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-258269.jpg
+sudo cp wallhaven*.jpg /usr/share/xfce4/backdrops
+sudo cp wallhaven*.jpg /usr/share/backgrounds/xfce
+
+wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/lightdm-gtk-greeter.conf
+sudo chown root lightdm-gtk-greeter.conf
+sudo rm /etc/lightdm/lightdm-gtk-greeter.conf
+sudo mv lightdm-gtk-greeter.conf /etc/lightdm
 
 mkdir $HOME/.emacs.d | chmod $USER $HOME/.emacs.d
 cd $HOME
@@ -128,6 +134,7 @@ rm dash-*.el
 mkdir erc-better-scroll
 wget https://raw.githubusercontent.com/Denommus/emacs-config/master/erc-better-scroll.el
 cp erc-better-scroll.el erc-better-scroll/
+rm erc-better-scroll.el
 
 mkdir erc-hl-nicks
 wget https://melpa.org/packages/erc-hl-nicks-20160202.1150.el
@@ -202,7 +209,6 @@ mv solarized-*/* themes/
 
 mv *.tar $HOME/Downloads
 rmdir solarized-*
-
 
 # remember to configure tlp and enable programs that are to autostart (go doc, emacs server and xflux)
 # also, you probably have to update emacs packages
