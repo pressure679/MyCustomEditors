@@ -85,20 +85,20 @@ cd ~/.emacs.d/
 mkdir elpa
 cd elpa
 
-mkdir auto-complete
-wget https://melpa.org/packages/auto-complete-20160329.2321.tar
-tar -xf autocomplete*.tar
-mv autocomplete-*/ auto-complete
+# mkdir auto-complete
+# wget https://melpa.org/packages/auto-complete-20160329.2321.tar
+# tar -xf autocomplete*.tar
+# mv autocomplete-*/ auto-complete
 
-mkdir centered-cursor-mode
-wget https://melpa.org/packages/centered-cursor-mode-20151001.634.el
-cp centered-*.el centered-cursor-mode/centered-cursor-mode.el
-rm centered-*.el
+# mkdir centered-cursor-mode
+# wget https://melpa.org/packages/centered-cursor-mode-20151001.634.el
+# cp centered-*.el centered-cursor-mode/centered-cursor-mode.el
+# rm centered-*.el
 
-mkdir dash
-wget https://melpa.org/packages/dash-20160306.1222.el
-cp dash-*.el dash/dash.el
-rm dash-*.el
+# mkdir dash
+# wget https://melpa.org/packages/dash-20160306.1222.el
+# cp dash-*.el dash/dash.el
+# rm dash-*.el
 
 mkdir erc-better-scroll
 wget https://raw.githubusercontent.com/Denommus/emacs-config/master/erc-better-scroll.el
