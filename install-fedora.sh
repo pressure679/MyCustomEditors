@@ -1,5 +1,5 @@
 sudo dnf upgrade
-sudo dnf install git mercurial irssi cmake automake w3m ctags tlp lm_sensors audacious htop youtube-dl synaptic terminator samba system-config-samba xclip taglib-devel golang golang-godoc emacs audacious-plugins
+sudo dnf install git mercurial irssi cmake automake w3m ctags tlp lm_sensors audacious htop youtube-dl synaptic terminator samba system-config-samba xclip taglib-devel golang golang-godoc emacs audacious-plugins gcc-c++
 
 sudo pip install livestreamer livestreamer-curses
 
