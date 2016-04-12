@@ -10,10 +10,14 @@ sudo tar -C /usr/share/xflux -xf xflux64.tgz
 sudo chown root /usr/share/xflux/xflux
 sudo ln -s /usr/share/xflux/xflux /usr/bin
 
-sudo rm /etc/environment
-wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/environment
-sudo mv environment /etc
-sudo chown root /etc/environment
+# sudo rm /etc/environment
+# wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/environment
+# sudo mv environment /etc
+# sudo chown root /etc/environment
+sudo touch /etc/profile.d/environment.sh
+sudo echo "GOPATH=$HOME/go" >> /etc/profile.d/environment.sh
+sudo echo "GOROOT=/usr/lib/golang" >> /etc/profile.d/environment.sh
+
 
 export GOPATH=$HOME/go
 export GOROOT=/usr/lib/golang
