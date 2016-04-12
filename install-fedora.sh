@@ -23,8 +23,14 @@ go get github.com/pressure679/dijkstra
 go get github.com/wtolson/go-taglib
 go get github.com/sjwhitworth/golearn
 go get github.com/Masterminds/squirrel
+go get github.com/nsf/gocode
 cd $GOPATH/src/github.com/sjwhitworth/golearn
 go get ./...
+cd $GOPATH/bin
+chmod +x gocode
+sudo chown root gocode
+sudo mv gocode /usr/lib/golang/bin
+sudo ln -s /usr/lib/golang/bin/gocode /usr/bin
 
 # cd $HOME/Downloads
 # https://drive.google.com/file/d/0B7iDWdwgu9QAZTI2YXNZSUJ4Y00/Ambiance-Blackout-Flat-Colors-16-04-1-LTS-GTK-3-18-Theme.tar.gz
