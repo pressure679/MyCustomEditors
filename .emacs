@@ -64,8 +64,8 @@
 (global-set-key (kbd "C-h") 'hs-toggle-hiding)
 (global-set-key (kbd "C-M-h") 'hs-hide-all)
 (global-set-key (kbd "M-j") 'other-window)
-(global-set-key (kbd "M-k") 'next-buffer)
-(global-set-key (kbd "M-l") 'previous-buffer)
+(global-set-key (kbd "M-n") 'next-buffer)
+(global-set-key (kbd "M-p") 'previous-buffer)
 (global-set-key (kbd "M-m") 'evil-escape)
 (global-set-key (kbd "C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "C-<right>") 'enlarge-window-horizontally)
@@ -84,6 +84,23 @@
 (require 'evil)
 (evil-mode 1)
 (require 'evil-escape)
+
+;; Single char cursor movement
+(global-set-key (kbd "M-h") 'backward-char)
+(global-set-key (kbd "M-l") 'forward-char)
+(global-set-key (kbd "M-k") 'previous-line)
+(global-set-key (kbd "M-j") 'next-line)
+
+;; Move by word
+(global-set-key (kbd "M-b") 'backward-word)
+(global-set-key (kbd "M-e") 'forward-word) ; was (prefix)
+
+;; Move to beginning/ending of line
+(global-set-key (kbd "M-I") 'evil-move-beginning-of-line)
+(global-set-key (kbd "M-A") 'evil-move-end-of-line)
+
+;; (global-set-key (kbd "M-d M-b") 'backward-kill-word)
+;; (global-set-key (kbd "M-d M-e") 'kill-word)
 
 (require 'flymake-cursor)
 
@@ -143,7 +160,7 @@
  '(erc-user-full-name "pressure679")
  '(inhibit-startup-screen t)
  '(line-number-mode nil)
- '(linum-format "%d ")
+ '(linum-format "  %d ")
  '(menu-bar-mode nil)
  '(show-paren-mode t)
  '(xterm-mouse-mode t))
@@ -152,7 +169,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "unspecified-bg" :foreground "color-246" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
+ '(default ((t (:inherit nil :stipple nil :background "unspecified-bg" :foreground "unspecified-fg" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
  '(ac-candidate-face ((t (:background nil :foreground "color-246"))))
  '(ac-candidate-mouse-face ((t (:background nil :foreground "color-246"))))
  '(ac-completion-face ((t (:background nil :foreground "color-246"))))
