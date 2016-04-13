@@ -3,8 +3,8 @@
   (server-start))
 
 (require 'package)
-(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
-(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+;; (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+;; (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete")
@@ -57,10 +57,7 @@
 (blink-cursor-mode 0)
 (show-paren-mode 1)
 (electric-indent-mode 1)
-(global-visual-line-mode 1)
 (linum-mode 1)
-;; (ac-linum-workaround)
-(setq ac-auto-show-menu nil)
 (setq-default cursor-type 'bar)
 
 (global-set-key (kbd "M-.") 'goto-line)
@@ -100,6 +97,7 @@
 (define-key ac-complete-mode-map "\C-n" 'ac-next)
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 (setq ac-auto-show-menu nil)
+(ac-linum-workaround)
 
 (require 'cl)
 (require 'yasnippet)
@@ -109,6 +107,7 @@
 (global-set-key (kbd "M-,") 'centered-cursor-mode)
 
 (require 'hlinum)
+(hlinum-activate)
 
 (defun on-after-init ()
   (unless (display-graphic-p (selected-frame))
@@ -162,11 +161,13 @@
  '(ac-selection-face ((t (:background nil :foreground "white"))))
  '(ac-yasnippet-candidate-face ((t (:background nil :foreground "color-246"))))
  '(ac-yasnippet-selection-face ((t (:background nil :foreground "color-246"))))
+ '(buffer-menu-buffer ((t (:weight bold))))
  '(cursor ((t (:background nil :foreground "color-246"))))
  '(fringe ((t (:background nil :foreground "color-246"))))
- '(linum ((t (:background nil :foreground "darkgreen"))))
- '(linum-highlight-face ((t (:background nil :foreground "red"))))
+ '(linum ((t (:background nil :foreground "color-246"))))
+ '(linum-highlight-face ((t (:background nil :foreground "#006700"))))
  '(menu ((t (:background nil))))
+ '(minibuffer-prompt ((t (:background nil :foreground "#afaf00" :weight bold))))
  '(mode-line ((t (:background nil :foreground "color-246" :box nil :overline nil :underline nil))))
  '(mode-line-inactive ((t (:background nil :foreground "color-235" :box nil :overline nil :underline nil))))
  '(popup-face ((t (:background nil :foreground "color-246"))))
