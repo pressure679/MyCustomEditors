@@ -1,5 +1,6 @@
 sudo dnf upgrade
-sudo dnf install git mercurial irssi cmake automake w3m ctags tlp lm_sensors audacious htop youtube-dl synaptic terminator samba system-config-samba xclip taglib-devel golang golang-godoc emacs audacious-plugins gcc-c++
+sudo rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-rawhide.noarch.rpm
+sudo dnf install git mercurial irssi cmake automake w3m ctags tlp lm_sensors audacious htop youtube-dl synaptic terminator samba system-config-samba xclip taglib-devel golang golang-godoc emacs audacious-plugins-freeworld gcc-c++ vlc community-mysql-server
 
 sudo pip install livestreamer livestreamer-curses
 
