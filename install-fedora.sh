@@ -1,6 +1,6 @@
+sudo rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
 sudo dnf upgrade
-sudo rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-rawhide.noarch.rpm
-sudo dnf install git mercurial irssi cmake automake w3m ctags tlp lm_sensors audacious htop youtube-dl synaptic terminator samba system-config-samba xclip taglib-devel golang golang-godoc emacs audacious-plugins-freeworld gcc-c++ vlc community-mysql-server
+sudo dnf install git mercurial irssi cmake automake w3m ctags tlp lm_sensors audacious htop youtube-dl synaptic terminator samba system-config-samba xclip taglib-devel golang golang-godoc emacs audacious-plugins-freeworld vlc community-mysql-server
 
 sudo pip install livestreamer livestreamer-curses
 
@@ -11,9 +11,12 @@ sudo tar -C /usr/share/xflux -xf xflux64.tgz
 sudo chown root /usr/share/xflux/xflux
 sudo ln -s /usr/share/xflux/xflux /usr/bin
 
+# sudo rm /etc/environment
+# wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/environment
+# sudo mv environment /etc
+# sudo chown root /etc/environment
 sudo touch /etc/profile.d/environment.sh
-sudo echo "GOPATH=$HOME/go" >> /etc/profile.d/environment.sh
-sudo echo "GOROOT=/usr/lib/golang" >> /etc/profile.d/environment.sh
+echo "GOPATH=$HOME/go\nGOROOT=/usr/lib/golang" | sudo tee /etc/profile.d/environment.sh
 
 export GOPATH=$HOME/go
 export GOROOT=/usr/lib/golang
@@ -37,38 +40,38 @@ sudo ln -s /usr/lib/golang/bin/gocode /usr/bin
 # sudo tar -C /usr/share/themes -xf *Ambiance*.tar.gz
 # sudo chown root /usr/share/themes/Ambiance* -R
 
-sudo wget http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-258269.jpg
-sudo cp wallhaven*.jpg /usr/share/xfce4/backdrops
-sudo cp wallhaven*.jpg /usr/share/backgrounds/
+# sudo wget http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-258269.jpg
+# sudo cp wallhaven*.jpg /usr/share/xfce4/backdrops
+# sudo cp wallhaven*.jpg /usr/share/backgrounds/
 
-wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/lightdm-gtk-greeter.conf
-sudo chown root lightdm-gtk-greeter.conf
-sudo rm /etc/lightdm/lightdm-gtk-greeter.conf
-sudo mv lightdm-gtk-greeter.conf /etc/lightdm
+# wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/lightdm-gtk-greeter.conf
+# sudo chown root lightdm-gtk-greeter.conf
+# sudo rm /etc/lightdm/lightdm-gtk-greeter.conf
+# sudo mv lightdm-gtk-greeter.conf /etc/lightdm
 
 mkdir $HOME/.emacs.d | chmod $USER $HOME/.emacs.d
 cd $HOME
 wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/.emacs
 
-mkdir $HOME/.irssi
-cd $HOME/.irssi
-wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/irssiconfig
-mv irssiconfig config
-touch default.theme
-echo "abstracts = {" >> default.theme
-echo "  sb_background = \"%n\";" >> default.theme
-echo } >> default.theme
-mkdir scripts
-mkdir scripts/autorun
-cd scripts/autorun
-wget https://raw.githubusercontent.com/irssi/scripts.irssi.org/gh-pages/scripts/nickcolor.pl
+# mkdir $HOME/.irssi
+# cd $HOME/.irssi
+# wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/irssiconfig
+# mv irssiconfig config
+# touch default.theme
+# echo "abstracts = {" >> default.theme
+# echo "  sb_background = \"%n\";" >> default.theme
+# echo } >> default.theme
+# mkdir scripts
+# mkdir scripts/autorun
+# cd scripts/autorun
+# wget https://raw.githubusercontent.com/irssi/scripts.irssi.org/gh-pages/scripts/nickcolor.pl
 
-mkdir $HOME/go; mkdir $HOME/go/wikiproj; cd $HOME/go/wikiproj
-wget https://raw.githubusercontent.com/pressure679/WikiPagerankDB/master/sample.go
+# mkdir $HOME/go; mkdir $HOME/go/wikiproj; cd $HOME/go/wikiproj
+# wget https://raw.githubusercontent.com/pressure679/WikiPagerankDB/master/sample.go
 
-mkdir $HOME/go/id3go
-cd $HOME/go/id3go
-wget https://raw.githubusercontent.com/pressure679/MP3ID3Tagger/master/sample.go
+# mkdir $HOME/go/id3go
+# cd $HOME/go/id3go
+# wget https://raw.githubusercontent.com/pressure679/MP3ID3Tagger/master/sample.go
 go build sample.go
 
 cd $HOME
@@ -82,9 +85,9 @@ wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/.bashrc
 wget https://raw.githubusercontent.com/pressure679/UbuntuEtcSetup/master/.emacs
 git clone https://github.com/pressure679/go-mode
 
-cd ~/.emacs.d/
-mkdir elpa
-cd elpa
+# cd ~/.emacs.d/
+# mkdir elpa
+# cd elpa
 
 # mkdir auto-complete
 # wget https://melpa.org/packages/auto-complete-20160329.2321.tar
@@ -92,7 +95,7 @@ cd elpa
 # mv autocomplete-*/ auto-complete
 
 # mkdir centered-cursor-mode
-# wget https://melpa.org/packages/centered-cursor-mode-20151001.634.el
+# # wget https://melpa.org/packages/centered-cursor-mode-20151001.634.el
 # cp centered-*.el centered-cursor-mode/centered-cursor-mode.el
 # rm centered-*.el
 
@@ -101,10 +104,10 @@ cd elpa
 # cp dash-*.el dash/dash.el
 # rm dash-*.el
 
-mkdir erc-better-scroll
-wget https://raw.githubusercontent.com/Denommus/emacs-config/master/erc-better-scroll.el
-cp erc-better-scroll.el erc-better-scroll/
-rm erc-better-scroll.el
+# mkdir erc-better-scroll
+# wget https://raw.githubusercontent.com/Denommus/emacs-config/master/erc-better-scroll.el
+# cp erc-better-scroll.el erc-better-scroll/
+# rm erc-better-scroll.el
 
 # mkdir erc-hl-nicks
 # wget https://melpa.org/packages/erc-hl-nicks-20160202.1150.el
