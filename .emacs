@@ -63,7 +63,7 @@
 (global-set-key (kbd "M-.") 'goto-line)
 (global-set-key (kbd "C-h") 'hs-toggle-hiding)
 (global-set-key (kbd "C-M-h") 'hs-hide-all)
-(global-set-key (kbd "M-j") 'other-window)
+(global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-n") 'next-buffer)
 (global-set-key (kbd "M-p") 'previous-buffer)
 (global-set-key (kbd "M-m") 'evil-escape)
@@ -93,14 +93,17 @@
 
 ;; Move by word
 (global-set-key (kbd "M-b") 'backward-word)
-(global-set-key (kbd "M-e") 'forward-word) ; was (prefix)
+(global-set-key (kbd "M-e") 'forward-word)
 
 ;; Move to beginning/ending of line
-(global-set-key (kbd "M-I") 'evil-move-beginning-of-line)
-(global-set-key (kbd "M-A") 'evil-move-end-of-line)
+;; (global-unset-key (kbd "M-S-I"))
+;; (global-set-key (kbd "M-S-I") 'evil-move-beginning-of-line)
+;; (global-unset-key (kbd "M-S-A"))
+;; (global-set-key (kbd "M-S-A") 'evil-move-end-of-line)
 
-;; (global-set-key (kbd "M-d M-b") 'backward-kill-word)
-;; (global-set-key (kbd "M-d M-e") 'kill-word)
+(global-unset-key (kbd "M-d"))
+(global-set-key (kbd "M-d M-b") 'backward-kill-word)
+(global-set-key (kbd "M-d M-e") 'kill-word)
 
 (require 'flymake-cursor)
 
