@@ -118,19 +118,7 @@ alias youtube-dl="youtube-dl --prefer-ffmpeg"
 alias ec="emacsclient -t"
 alias w3m="w3m -B"
 alias xclip="xclip -selection c"
-alias tmux="xterm-256color tmux"
-export TERM="xterm-256color"
-
-if [ "$COLORTERM" == "gnome-terminal" ] || [ "$COLORTERM" == "xfce4-terminal" ]
-then
-		TERM=xterm-256color
-elif [ "$COLORTERM" == "xterm" ]
-then
-		TERM=xterm-256color
-fi
-if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
-    export TERM=xterm-256color
-fi
+export TERM="xterm-16color"
 
 # color codes
 ## foreground:
@@ -149,43 +137,39 @@ fi
 echo -ne '\e]10;#A89984\a'
 echo -ne '\e]11;#A89984\a'
 # echo -ne '\e]11;#300A24\a'
-# echo -ne '\e]12;#A89984\a'
+echo -ne '\e]12;#AAAAAA\a'
 # echo -ne '\e]12;#A7A7A7\a'
-# echo -ne '\e]4;0;#282828\a'
-# echo -ne '\e]4;1;#CC241D\a'
-# echo -ne '\e]4;2;#98971A\a'
-# echo -ne '\e]4;3;#D79921\a'
-# echo -ne '\e]4;4;#458588\a'
-# echo -ne '\e]4;5;#B16286\a'
-# echo -ne '\e]4;6;#689d6A\a'
-# echo -ne '\e]4;7;#A89984\a'
-# echo -ne '\e]4;8;#928374\a'
-# echo -ne '\e]4;9;#FB4934\a'
-# echo -ne '\e]4;10;#B8BB26\a'
-# echo -ne '\e]4;11;#FABD2F\a'
-# echo -ne '\e]4;12;#83A598\a'
-# echo -ne '\e]4;13;#D3869B\a'
-# echo -ne '\e]4;14;#8EC07C\a'
-# echo -ne '\e]4;15;#EBDBB2\a'
+echo -ne '\e]4;0;#282828\a'
+echo -ne '\e]4;1;#CC241D\a'
+echo -ne '\e]4;2;#98971A\a'
+echo -ne '\e]4;3;#D79921\a'
+echo -ne '\e]4;4;#458588\a'
+echo -ne '\e]4;5;#B16286\a'
+echo -ne '\e]4;6;#689d6A\a'
+echo -ne '\e]4;7;#A89984\a'
+echo -ne '\e]4;8;#928374\a'
+echo -ne '\e]4;9;#FB4934\a'
+echo -ne '\e]4;10;#B8BB26\a'
+echo -ne '\e]4;11;#FABD2F\a'
+echo -ne '\e]4;12;#83A598\a'
+echo -ne '\e]4;13;#D3869B\a'
+echo -ne '\e]4;14;#8EC07C\a'
+echo -ne '\e]4;15;#EBDBB2\a'
 
 # solarized-dark color codes
-echo -ne '\e]4;0;#07364242\a'
-echo -ne '\e]4;1;#DC322F2F\a'
-echo -ne '\e]4;2;#85990000\a'
-echo -ne '\e]4;3;#B5890000\a'
-echo -ne '\e]4;4;#268BD2D2\a'
-echo -ne '\e]4;5;#D3368282\a'
-echo -ne '\e]4;6;#2AA19898\a'
-echo -ne '\e]4;7;#EEE8D5D5\a'
-echo -ne '\e]4;8;#002B3636\a'
-echo -ne '\e]4;9;#CB4B1616\a'
-echo -ne '\e]4;10;#586E7575\a'
-echo -ne '\e]4;11;#657B8383\a'
-echo -ne '\e]4;12;#83949696\a'
-echo -ne '\e]4;13;#6C71C4C4\a'
-echo -ne '\e]4;14;#93A1A1A1\a'
-echo -ne '\e]4;15;#FDF6E3E3\a'
-
-function setgov () {
-	echo "$1" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor 
-}
+# # echo -ne '\e]4;0;#07364242\a'
+# echo -ne '\e]4;1;#DC322F2F\a'
+# echo -ne '\e]4;2;#85990000\a'
+# echo -ne '\e]4;3;#B5890000\a'
+# echo -ne '\e]4;4;#268BD2D2\a'
+# echo -ne '\e]4;5;#D3368282\a'
+# echo -ne '\e]4;6;#2AA19898\a'
+# echo -ne '\e]4;7;#EEE8D5D5\a'
+# echo -ne '\e]4;8;#002B3636\a'
+# echo -ne '\e]4;9;#CB4B1616\a'
+# echo -ne '\e]4;10;#586E7575\a'
+# echo -ne '\e]4;11;#657B8383\a'
+# echo -ne '\e]4;12;#83949696\a'
+# echo -ne '\e]4;13;#6C71C4C4\a'
+# echo -ne '\e]4;14;#93A1A1A1\a'
+# echo -ne '\e]4;15;#FDF6E3E3\a'
