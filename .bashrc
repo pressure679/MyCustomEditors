@@ -118,6 +118,11 @@ alias youtube-dl="youtube-dl --prefer-ffmpeg"
 alias ec="emacsclient -t"
 alias w3m="w3m -B"
 alias xclip="xclip -selection c"
+alias sl="amixer set Master 5%+"
+alias sh="amixer set Master 5%-"
+alias s25="amixer set Master 25%"
+alias s50="amixer set Master 50%"
+alias s75="amixer set Master 75"
 export TERM="xterm-16color"
 
 # color codes
