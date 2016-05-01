@@ -1,6 +1,6 @@
 sudo rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
 sudo dnf upgrade
-sudo dnf install git mercurial irssi cmake automake w3m ctags tlp lm_sensors audacious htop youtube-dl synaptic terminator samba system-config-samba xclip taglib-devel golang golang-godoc golang-docs emacs audacious-plugins-freeworld vlc community-mysql-server ecryptfs-utils cryptsetup
+sudo dnf install git mercurial irssi cmake automake w3m ctags tlp lm_sensors audacious htop youtube-dl synaptic terminator samba system-config-samba xclip taglib-devel golang golang-godoc golang-docs emacs audacious-plugins-freeworld vlc community-mysql-server ecryptfs-utils cryptsetup byobu xfce4-volumed
 
 sudo pip install livestreamer livestreamer-curses
 
