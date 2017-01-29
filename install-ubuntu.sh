@@ -14,7 +14,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 
 sudo apt-get update
 # sudo apt-get upgrade
-sudo apt-get install git mercurial irssi make cmake automake w3m ctags tlp lm-sensors vlc audacious spotify-client htop openssh-server python-pip youtube-dl mp3gain synaptic terminator samba system-config-samba gufw xclip libtagc0-dev golang-go.tools
+sudo apt-get install git mercurial irssi make cmake automake w3m ctags tlp lm-sensors vlc audacious spotify-client htop openssh-server python-pip youtube-dl mp3gain synaptic terminator samba system-config-samba gufw xclip libtagc0-dev golang-go.tools imagemagick libpng-dev libz-dev libpoppler-glib-dev libpoppler-private-dev
 
 wget https://yt-dl.org/downloads/2016.03.27/youtube-dl
 mkdir /usr/share/youtube-dl
