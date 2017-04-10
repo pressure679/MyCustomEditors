@@ -76,8 +76,8 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -114,16 +114,21 @@ if ! shopt -oq posix; then
 fi
 
 alias cls="clear screen"
-alias youtube-dl="youtube-dl --prefer-ffmpeg"
+alias ydl="youtube-dl --prefer-ffmpeg"
+alias ydlvid="youtube-dl --prefer-ffmpeg --postprocessor-args -fps 24"
+alias ydlmp3="youtube-dl --prefer-ffmpeg -x --audio-quality 192 --audio-format mp3"
 alias ec="emacsclient -t"
 alias w3m="w3m -B"
 alias xclip="xclip -selection c"
-alias sl="amixer set Master 5%+"
-alias sh="amixer set Master 5%-"
-alias s25="amixer set Master 25%"
-alias s50="amixer set Master 50%"
-alias s75="amixer set Master 75"
-export TERM="xterm-16color"
+alias vp="amixer sset Master 5+ -q"
+alias vm="amixer sset Master 5- -q"
+alias v25="amixer sset Master 25 -q"
+alias v50="amixer sset Master 50 -q"
+alias v75="amixer sset Master 75 -q"
+export TERM="xterm-256color"
+export GOROOT="/usr/share/go"
+export GOPATH="/home/naamik/go"
+export gotraining="/home/naamik/Documents/ardanlabs/gotraining/topics"
 
 # color codes
 ## foreground:
@@ -132,34 +137,62 @@ export TERM="xterm-16color"
 ## background:
 ### #000000 - black
 ### #300A24 - ambience
+### #2E2E2E - NumixDarkRed
 # themes:
 ## gruvbox
 ## cyberpunk
 ## solarized-dark
 ## monokai
 
+# if ["$TERM" = "screen"]; then
 # gruvbox color codes
+# echo -ne '\e]10;P008000\a'
+# echo -ne 'P008000\a'
+# # echo -ne 'P000A24\a'
+# echo -ne 'P008000\a'
+# # echo -ne 'P0AAAAA\a'
+# # echo -ne 'P07A7A7\a'
+# echo -ne 'P082828\a'
+# echo -ne 'P0C241D\a'
+# echo -ne 'P08971A\a'
+# echo -ne 'P079921\a'
+# echo -ne 'P058588\a'
+# echo -ne 'P016286\a'
+# echo -ne 'P089d6A\a'
+# echo -ne 'P089984\a'
+# echo -ne 'P0928374\a'
+# echo -ne 'P0FB4934\a'
+# echo -ne 'P0B8BB26\a'
+# echo -ne 'P0FABD2F\a'
+# echo -ne 'P083A598\a'
+# echo -ne 'P0D3869B\a'
+# echo -ne 'P08EC07C\a'
+# echo -ne 'P0EBDBB2\a'
+# fi
+
+# # gruvbox color codes
 echo -ne '\e]10;#A89984\a'
+# echo -ne '\e]10;#A89984\a'
 echo -ne '\e]11;#A89984\a'
 # echo -ne '\e]11;#300A24\a'
-echo -ne '\e]12;#AAAAAA\a'
+echo -ne '\e]12;#0000FF\a'
 # echo -ne '\e]12;#A7A7A7\a'
-echo -ne '\e]4;0;#282828\a'
-echo -ne '\e]4;1;#CC241D\a'
-echo -ne '\e]4;2;#98971A\a'
-echo -ne '\e]4;3;#D79921\a'
-echo -ne '\e]4;4;#458588\a'
-echo -ne '\e]4;5;#B16286\a'
-echo -ne '\e]4;6;#689d6A\a'
-echo -ne '\e]4;7;#A89984\a'
-echo -ne '\e]4;8;#928374\a'
-echo -ne '\e]4;9;#FB4934\a'
-echo -ne '\e]4;10;#B8BB26\a'
-echo -ne '\e]4;11;#FABD2F\a'
-echo -ne '\e]4;12;#83A598\a'
-echo -ne '\e]4;13;#D3869B\a'
-echo -ne '\e]4;14;#8EC07C\a'
-echo -ne '\e]4;15;#EBDBB2\a'
+echo -ne '\e]4;0;#7F7F7F\a'
+echo -ne '\e]4;1;#CD0000\a'
+echo -ne '\e]4;2;#00CD00\a'
+echo -ne '\e]4;3;#CDCD00\a'
+echo -ne '\e]4;4;#0000CD\a'
+echo -ne '\e]4;5;#CD00CD\a'
+echo -ne '\e]4;6;#00CDCD\a'
+echo -ne '\e]4;7;#E5E5E5\a'
+echo -ne '\e]4;8;#7F7F7F\a'
+echo -ne '\e]4;9;#FF0000\a'
+echo -ne '\e]4;10;#00FF00\a'
+echo -ne '\e]4;11;#FFFF00\a'
+echo -ne '\e]4;12;#0000FF\a'
+echo -ne '\e]4;13;#FF00FF\a'
+echo -ne '\e]4;14;#00FFFF\a'
+echo -ne '\e]4;15;#FFFFFF\a'
 
 # solarized-dark color codes
 # # echo -ne '\e]4;0;#07364242\a'
@@ -178,3 +211,28 @@ echo -ne '\e]4;15;#EBDBB2\a'
 # echo -ne '\e]4;13;#6C71C4C4\a'
 # echo -ne '\e]4;14;#93A1A1A1\a'
 # echo -ne '\e]4;15;#FDF6E3E3\a'
+
+# ambience color codes
+echo -ne '\e]10;#A89984\a'
+# echo -ne '\e]10;#A89984\a'
+echo -ne '\e]11;#A89984\a'
+# echo -ne '\e]11;#300A24\a'
+echo -ne '\e]12;#A89984\a'
+# echo -ne '\e]12;#A7A7A7\a'
+echo -ne '\e]4;0;#000000\a'
+echo -ne '\e]4;1;#AA0000\a'
+echo -ne '\e]4;2;#00AA00\a'
+echo -ne '\e]4;3;#AA5500\a'
+echo -ne '\e]4;4;#0000AA\a'
+echo -ne '\e]4;5;#AA00AA\a'
+echo -ne '\e]4;6;#00AAAA\a'
+echo -ne '\e]4;7;#AAAAAA\a'
+echo -ne '\e]4;8;#555555\a'
+echo -ne '\e]4;9;#FF5555\a'
+echo -ne '\e]4;10;#55FF55\a'
+echo -ne '\e]4;11;#FFFF55\a'
+echo -ne '\e]4;12;#5555FF\a'
+echo -ne '\e]4;13;#FF55FF\a'
+echo -ne '\e]4;14;#55FFFF\a'
+echo -ne '\e]4;15;#FFFFFF\a'
+
