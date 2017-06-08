@@ -3,7 +3,7 @@ set rtp +=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'fsouza/go.vim'
+"Plugin 'fsouza/go.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 "Plugin 'Valloric/YouCompleteMe'
