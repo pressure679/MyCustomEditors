@@ -9,6 +9,7 @@ Plugin 'majutsushi/tagbar'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'fatih/vim-go'
 call vundle#end()
 
 let g:go_highlight_operators = 1
