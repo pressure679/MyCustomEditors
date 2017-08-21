@@ -3,36 +3,42 @@ set rtp +=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
-"Plugin 'fsouza/go.vim'
+" "Plugin 'fsouza/go.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+" "Plugin 'Valloric/YouCompleteMe'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
 Plugin 'fatih/vim-go'
 call vundle#end()
 
-let g:go_highlight_operators = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_build_constraints = 1
-let g:go_fmt_autosave = 0
+" execute pathogen#infect()
+" Plug 'fatih/vim-go'
+" Plug 'vim-colorschemes'
+" Plug 'scrooloose/nerdtree'
+" Plug 'majutsushi/tagbar'
 
-let g:UltiSnipsExpandTrigger="<C-k>"
-let g:UltiSnipsJumpForwardTrigger="<C-l>"
-let g:UltiSnipsJumpBackwardTrigger="<C-j>"
+" let g:go_highlight_operators = 1
+" let g:go_highlight_functions = 1
+" let g:go_highlight_methods = 1
+" let g:go_highlight_structs = 1
+" let g:go_highlight_build_constraints = 1
+" let g:go_fmt_autosave = 0
 
-let g:tagbar_type_go = {
-  \ 'ctagstype': 'go',
-  \ 'kinds' : [
-    \'p:package',
-  \'f:function',
-  \'v:variables',
-  \'t:type',
-  \'c:const'
-  \]
-\}
+" let g:UltiSnipsExpandTrigger="<C-k>"
+" let g:UltiSnipsJumpForwardTrigger="<C-l>"
+" let g:UltiSnipsJumpBackwardTrigger="<C-j>"
+
+" let g:tagbar_type_go = {
+"   \ 'ctagstype': 'go',
+"   \ 'kinds' : [
+"     \'p:package',
+"   \'f:function',
+"   \'v:variables',
+"   \'t:type',
+"   \'c:const'
+"   \]
+" \}
 
 set tabstop=2
 set expandtab
@@ -53,6 +59,12 @@ set smartcase
 set wildmenu
 set wildmode=list:longest,full
 set scrolloff=10
+set list
+set listchars=tab:\|\ 
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
 
 set backupdir=~/.vim/backup/
 set directory=~/.vim/swap/
@@ -65,8 +77,8 @@ se t_Co=256
 "colorscheme distinguished
 "colorscheme vividchalk
 "colorscheme matrix
-"colorscheme molokai
-colorscheme gruvbox
+colorscheme molokai
+"colorscheme gruvbox
 "colorscheme solarized
 
 syntax enable
@@ -101,17 +113,18 @@ hi Function ctermfg=none
 hi MatchParen ctermfg=DarkGreen
 hi VertSplit ctermbg=none
 
-inoremap <F4> <Esc>
-nmap <F3> :w! <CR>
-nmap <F2> :wq! <CR>
+nmap <C-s> :w! <CR>
+nmap <C-x><C-c> :q!<CR>
+nmap <C-x><C-s> :wq! <CR>
+nmap <F4> <Esc>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
-nmap <F9> va}zf <CR>
-nmap <F10> zo <CR>
-set <m-a>=a
-nmap <m-a> :w! <CR>
-nmap <m-a><m-a> :wq! <CR>
-set <m-q>=q
-inoremap <m-q> <Esc>
-nmap <m-q><m-q> :q! <CR>
+" nmap <F9> va}zf <CR>
+" nmap <F10> zo <CR>
+" nmap <m-a> a
+" nmap <m-a> :w!<CR>
+" nmap <m-a><m-a> :wq!<CR>
+" nmap <m-q> q
+" nmap <m-q> <Esc>
+nmap <m-m> <Esc>
 filetype plugin on
