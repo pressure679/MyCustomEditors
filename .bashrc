@@ -117,8 +117,8 @@ alias cls="clear screen"
 alias ydl="youtube-dl --prefer-ffmpeg"
 alias ydlvid="youtube-dl --prefer-ffmpeg --postprocessor-args -fps 24"
 alias ydlmp3="youtube-dl --prefer-ffmpeg -x --audio-quality 192 --audio-format mp3"
-alias ec="emacsclient -t"
 alias w3m="w3m -B"
+alias ec="emacsclient -t"
 alias xclip="xclip -selection c"
 alias vp="amixer sset Master 5+ -q"
 alias vm="amixer sset Master 5- -q"
@@ -126,9 +126,10 @@ alias v25="amixer sset Master 25 -q"
 alias v50="amixer sset Master 50 -q"
 alias v75="amixer sset Master 75 -q"
 export TERM="xterm-256color"
-export GOROOT="/usr/share/go"
-export GOPATH="/home/naamik/go"
-export gotraining="/home/naamik/Documents/ardanlabs/gotraining/topics"
+# export GOROOT="/usr/local/go-1.8.3"
+# export GOPATH="/home/naamik/go"
+# export gotraining="/home/naamik/Documents/ardanlabs/gotraining/topics"
+export wd=/home/pressure679/go/src/Legacy/pressure679/GhostWriter
 
 # color codes
 ## foreground:
@@ -144,57 +145,56 @@ export gotraining="/home/naamik/Documents/ardanlabs/gotraining/topics"
 ## solarized-dark
 ## monokai
 
-# if ["$TERM" = "screen"]; then
-# gruvbox color codes
-# echo -ne '\e]10;P008000\a'
-# echo -ne 'P008000\a'
-# # echo -ne 'P000A24\a'
-# echo -ne 'P008000\a'
-# # echo -ne 'P0AAAAA\a'
-# # echo -ne 'P07A7A7\a'
-# echo -ne 'P082828\a'
-# echo -ne 'P0C241D\a'
-# echo -ne 'P08971A\a'
-# echo -ne 'P079921\a'
-# echo -ne 'P058588\a'
-# echo -ne 'P016286\a'
-# echo -ne 'P089d6A\a'
-# echo -ne 'P089984\a'
-# echo -ne 'P0928374\a'
-# echo -ne 'P0FB4934\a'
-# echo -ne 'P0B8BB26\a'
-# echo -ne 'P0FABD2F\a'
-# echo -ne 'P083A598\a'
-# echo -ne 'P0D3869B\a'
-# echo -ne 'P08EC07C\a'
-# echo -ne 'P0EBDBB2\a'
-# fi
-
-# # gruvbox color codes
-echo -ne '\e]10;#A89984\a'
+# Gruvbox color codes - https://github.com/morhetz/gruvbox
 # echo -ne '\e]10;#A89984\a'
-echo -ne '\e]11;#A89984\a'
-# echo -ne '\e]11;#300A24\a'
-echo -ne '\e]12;#0000FF\a'
-# echo -ne '\e]12;#A7A7A7\a'
-echo -ne '\e]4;0;#7F7F7F\a'
-echo -ne '\e]4;1;#CD0000\a'
-echo -ne '\e]4;2;#00CD00\a'
-echo -ne '\e]4;3;#CDCD00\a'
-echo -ne '\e]4;4;#0000CD\a'
-echo -ne '\e]4;5;#CD00CD\a'
-echo -ne '\e]4;6;#00CDCD\a'
-echo -ne '\e]4;7;#E5E5E5\a'
-echo -ne '\e]4;8;#7F7F7F\a'
-echo -ne '\e]4;9;#FF0000\a'
-echo -ne '\e]4;10;#00FF00\a'
-echo -ne '\e]4;11;#FFFF00\a'
-echo -ne '\e]4;12;#0000FF\a'
-echo -ne '\e]4;13;#FF00FF\a'
-echo -ne '\e]4;14;#00FFFF\a'
-echo -ne '\e]4;15;#FFFFFF\a'
+# # echo -ne '\e]10;#A89984\a'
+# echo -ne '\e]11;#A89984\a'
+# # echo -ne '\e]11;#300A24\a'
+# echo -ne '\e]12;#AAAAAA\a'
+# # echo -ne '\e]12;#A7A7A7\a'
+# echo -ne '\e]4;0;#282828\a'
+# echo -ne '\e]4;1;#cc241d\a'
+# echo -ne '\e]4;2;#98971a\a'
+# echo -ne '\e]4;3;#d79921\a'
+# echo -ne '\e]4;4;#458588\a'
+# echo -ne '\e]4;5;#b16286\a'
+# echo -ne '\e]4;6;#689a6a\a'
+# echo -ne '\e]4;7;#a89984\a'
+# echo -ne '\e]4;8;#928374\a'
+# echo -ne '\e]4;9;#fb4934\a'
+# echo -ne '\e]4;10;#b8bb26\a'
+# echo -ne '\e]4;11;#fabd2f\a'
+# echo -ne '\e]4;12;#83a598\a'
+# echo -ne '\e]4;13;#d3869b\a'
+# echo -ne '\e]4;14;#8ec07c\a'
+# echo -ne '\e]4;15;#ebdbb2\a'
 
-# solarized-dark color codes
+# Github color codes (scheme/palette)
+# echo -ne '\e]10;#3E3E3E\a'
+# # echo -ne '\e]10;#A89984\a'
+# echo -ne '\e]11;#F4F4F4\a'
+# # echo -ne '\e]11;#300A24\a'
+# echo -ne '\e]12;#AAAAAA\a'
+# # echo -ne '\e]12;#A7A7A7\a'
+# echo -ne '\e]4;0;#3E3E3E\a'
+# echo -ne '\e]4;1;#970B16\a'
+# echo -ne '\e]4;2;#07962A\a'
+# echo -ne '\e]4;3;#F8EEC7\a'
+# echo -ne '\e]4;4;#003E8A\a'
+# echo -ne '\e]4;5;#E94691\a'
+# echo -ne '\e]4;6;#89D1EC\a'
+# echo -ne '\e]4;7;#FFFFFF\a'
+# echo -ne '\e]4;8;#666666\a'
+# echo -ne '\e]4;9;#DE0000\a'
+# echo -ne '\e]4;10;#87D5A2\a'
+# echo -ne '\e]4;11;#F1D007\a'
+# echo -ne '\e]4;12;#2E6CBA\a'
+# echo -ne '\e]4;13;#FFA29F\a'
+# echo -ne '\e]4;14;#1CFAFE\a'
+# echo -ne '\e]4;15;#FFFFFF\a'
+
+
+# Solarized-dark color codes
 # # echo -ne '\e]4;0;#07364242\a'
 # echo -ne '\e]4;1;#DC322F2F\a'
 # echo -ne '\e]4;2;#85990000\a'
@@ -212,27 +212,50 @@ echo -ne '\e]4;15;#FFFFFF\a'
 # echo -ne '\e]4;14;#93A1A1A1\a'
 # echo -ne '\e]4;15;#FDF6E3E3\a'
 
-# ambience color codes
-echo -ne '\e]10;#A89984\a'
+# Ambience color codes
 # echo -ne '\e]10;#A89984\a'
-echo -ne '\e]11;#A89984\a'
-# echo -ne '\e]11;#300A24\a'
-echo -ne '\e]12;#A89984\a'
-# echo -ne '\e]12;#A7A7A7\a'
-echo -ne '\e]4;0;#000000\a'
-echo -ne '\e]4;1;#AA0000\a'
-echo -ne '\e]4;2;#00AA00\a'
-echo -ne '\e]4;3;#AA5500\a'
-echo -ne '\e]4;4;#0000AA\a'
-echo -ne '\e]4;5;#AA00AA\a'
-echo -ne '\e]4;6;#00AAAA\a'
-echo -ne '\e]4;7;#AAAAAA\a'
-echo -ne '\e]4;8;#555555\a'
-echo -ne '\e]4;9;#FF5555\a'
-echo -ne '\e]4;10;#55FF55\a'
-echo -ne '\e]4;11;#FFFF55\a'
-echo -ne '\e]4;12;#5555FF\a'
-echo -ne '\e]4;13;#FF55FF\a'
-echo -ne '\e]4;14;#55FFFF\a'
-echo -ne '\e]4;15;#FFFFFF\a'
+# # echo -ne '\e]10;#A89984\a'
+# echo -ne '\e]11;#A89984\a'
+# # echo -ne '\e]11;#300A24\a'
+# echo -ne '\e]12;#A89984\a'
+# # echo -ne '\e]12;#A7A7A7\a'
+# echo -ne '\e]4;0;#000000\a'
+# echo -ne '\e]4;1;#AA0000\a'
+# echo -ne '\e]4;2;#00AA00\a'
+# echo -ne '\e]4;3;#AA5500\a'
+# echo -ne '\e]4;4;#0000AA\a'
+# echo -ne '\e]4;5;#AA00AA\a'
+# echo -ne '\e]4;6;#00AAAA\a'
+# echo -ne '\e]4;7;#AAAAAA\a'
+# echo -ne '\e]4;8;#555555\a'
+# echo -ne '\e]4;9;#FF5555\a'
+# echo -ne '\e]4;10;#55FF55\a'
+# echo -ne '\e]4;11;#FFFF55\a'
+# echo -ne '\e]4;12;#5555FF\a'
+# echo -ne '\e]4;13;#FF55FF\a'
+# echo -ne '\e]4;14;#55FFFF\a'
+# echo -ne '\e]4;15;#FFFFFF\a'
 
+# Molokai color codes
+# echo -ne '\e]10;#A89984\a'
+# # echo -ne '\e]10;#A89984\a'
+# echo -ne '\e]11;#A89984\a'
+# # echo -ne '\e]11;#300A24\a'
+# echo -ne '\e]12;#A89984\a'
+# # echo -ne '\e]12;#A7A7A7\a'
+# echo -ne '\e]4;0;#1B1D1E\a'
+# echo -ne '\e]4;1;#FF0044\a'
+# echo -ne '\e]4;2;#82B414\a'
+# echo -ne '\e]4;3;#FD971F\a'
+# echo -ne '\e]4;4;#266C98\a'
+# echo -ne '\e]4;5;#AC0CB1\a'
+# echo -ne '\e]4;6;#AE81FF\a'
+# echo -ne '\e]4;7;#CCCCCC\a'
+# echo -ne '\e]4;8;#808080\a'
+# echo -ne '\e]4;9;#F92672\a'
+# echo -ne '\e]4;10;#A6E22E\a'
+# echo -ne '\e]4;11;#E6DB74\a'
+# echo -ne '\e]4;12;#7070F0\a'
+# echo -ne '\e]4;13;#D63AE1\a'
+# echo -ne '\e]4;14;#AE81FF\a'
+# echo -ne '\e]4;15;#F8F8F2\a
