@@ -100,19 +100,28 @@ chatnets = {
 };
 
 channels = (
+  { name = "##programming"; chatnet = "FreeNode"; autojoin = "yes"; },
+  { name = "#algorithms"; chatnet = "FreeNode"; autojoin = "yes"; },
+  { 
+    name = "##machinelearning";
+    chatnet = "FreeNode";
+    autojoin = "yes";
+  },
+  { name = "#ai"; chatnet = "FreeNode"; autojoin = "yes"; },
+  { name = "##statistics"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#go-nuts"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#python"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#java"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "##programming"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#algorithms"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#ai"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "##machinelearning"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "##statistics"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#wikimedia-ai"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "##networking"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "##security"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#vim"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#emacs"; chatnet = "FreeNode"; autojoin = "yes"; }
+  { name = "##linux"; chatnet = "FreeNode"; autojoin = "yes"; },
+  { name = "#ubuntu"; chatnet = "FreeNode"; autojoin = "yes"; },
+  { name = "#suse"; chatnet = "FreeNode"; autojoin = "yes"; },
+  { name = "#kalilinux"; chatnet = "FreeNode"; autojoin = "yes"; },
+  { name = "#blackarch"; chatnet = "FreeNode"; autojoin = "yes"; },
+  { name = "#mediawiki"; chatnet = "FreeNode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -166,7 +175,7 @@ aliases = {
 };
 settings = {
   core = {
-    real_name = "naamik";
+    real_name = "Vittus Peter Ove Maqe Mikiassen";
     user_name = "naamik";
     nick = "pressure679";
   };
@@ -179,15 +188,22 @@ ignores = (
   { level = "JOINS PARTS QUITS"; channels = ( "#python" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "##java" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "##programming" ); },
-  { level = "JOINS PARTS QUITS"; channels = ( "#algorithms" ); },
+  { level = "JOINS PARTS QUITS"; channels = ( "##algorithms" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#ai" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "##machinelearning" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "##statistics" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#wikimedia-ai" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "##networking" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "##security" ); },
-  { level = "JOINS PARTS QUITS"; channels = ( "#ubuntu" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#vim" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#emacs" ); },
-  { mask = "all"; level = "JOINS PARTS QUITS"; }
+  { level = "JOINS PARTS QUITS"; channels = ( "##linux" ); },
+  { level = "JOINS PARTS QUITS"; channels = ( "#ubuntu" ); },
+  { level = "JOINS PARTS QUITS"; channels = ( "#suse" ); },
+  { level = "JOINS PARTS QUITS"; channels = ( "#kalilinux" ); },
+  { level = "JOINS PARTS QUITS"; channels = ( "#blackarch" ); },
+  { level = "JOINS PARTS QUITS"; channels = ( "#mediawiki" ); },
+  { mask = "all"; level = "JOINS PARTS QUITS"; },
+  { mask = "QUITS"; level = "JOINS PARTS"; },
+  { mask = "JOINS"; level = "PARTS QUITS"; }
 );
