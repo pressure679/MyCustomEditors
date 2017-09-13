@@ -3,13 +3,15 @@ set rtp +=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
-" "Plugin 'fsouza/go.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-" "Plugin 'Valloric/YouCompleteMe'
-" Plugin 'SirVer/ultisnips'
-" Plugin 'honza/vim-snippets'
 Plugin 'fatih/vim-go'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
+Plugin 'ervandew/supertab'
 call vundle#end()
 
 " execute pathogen#infect()
@@ -64,7 +66,8 @@ set listchars=tab:\|\
 set foldmethod=indent   
 set foldnestmax=10
 set nofoldenable
-set foldlevel=2
+set foldlevel=1
+set timeoutlen=1000 ttimeoutlen=0
 
 set backupdir=~/.vim/backup/
 set directory=~/.vim/swap/
@@ -112,19 +115,42 @@ hi Visual cterm=none
 hi Function ctermfg=none
 hi MatchParen ctermfg=DarkGreen
 hi VertSplit ctermbg=none
+hi Statusline ctermbg=none
+hi Visual ctermbg=none
+hi Visual ctermfg=DarkGreen
+hi guicursor ctermbg=Gray
+hi Cursor ctermbg=Gray
 
-nmap <C-s> :w! <CR>
-nmap <C-x><C-c> :q!<CR>
-nmap <C-x><C-s> :wq! <CR>
-nmap <F4> <Esc>
-nmap <F7> :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
-" nmap <F9> va}zf <CR>
-" nmap <F10> zo <CR>
-" nmap <m-a> a
-" nmap <m-a> :w!<CR>
-" nmap <m-a><m-a> :wq!<CR>
-" nmap <m-q> q
-" nmap <m-q> <Esc>
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+
+" Disable AutoComplPop.
+" let g:acp_enableAtStartup = 0
+
+" Use neocomplete.
+" let g:neocomplete#enable_at_startup = 1
+
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
+set runtimepath+=~/.vim/bundle/vim-go/gosnippets/snippets/
+set runtimepath+=~/.vim/bundle/vim-go/gosnippets/UltiSnips/
+
+" use different snippets dir
+" let g:UltiSnipsSnippetsDir='~/.vim/my-snippets/'
+" let g:UltiSnipsSnippetDirectories=["my-snippets"]
+
+"nmap <F2> :wq! <CR>
+"nmap <F3> :w! <CR>
+"nmap <F4> <Esc>
+nmap <F2> :NERDTreeToggle<CR>
+nmap <F3> :TagbarToggle<CR>
+"nmap <F9> va}zf <CR>
+"nmap <F10> zo <CR>
+" set <m-a>=a
+" nmap <m-a> :w! <CR>
+" nmap <m-a><m-a> :wq! <CR>
+" set <m-q>=q
+" inoremap <m-q> <Esc>
 nmap <m-m> <Esc>
+"nmap <m-q><m-q> :q! <CR>
+nmap <C-x><C-o> <C-Space>
 filetype plugin on
